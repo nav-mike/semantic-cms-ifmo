@@ -55,6 +55,9 @@ group :development do
   gem 'rubocop', require: false
 end
 
+# RDF
+gem 'activerdf'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
