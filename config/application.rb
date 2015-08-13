@@ -22,5 +22,16 @@ module Workspace
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    
+    config.generators do |g|
+      g.orm :active_record
+      g.template_engine :slim
+      g.test_framework :rspec
+      g.stylesheets true
+      g.javascripts true
+      g.jbuilder true
+      g.assets false
+      g.helper false
+    end
   end
 end
