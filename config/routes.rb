@@ -53,4 +53,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  mount MongodbLogger::Server.new, at: '/mongodb', as: :mongodb
+  mount MongodbLogger::Assets.instance, at: '/mongodb/assets', as: :mongodb_assets
 end

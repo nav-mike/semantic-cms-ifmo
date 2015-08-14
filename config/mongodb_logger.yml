@@ -1,0 +1,7 @@
+default: &default
+  database: logger
+  capsize: <%= 400.megabytes %>
+  user: 'mongodblogger'
+  password: 'MongoDbLoggerPassword!'
+  host: 'ds055832.mongolab.com'
+  port: '55832'
