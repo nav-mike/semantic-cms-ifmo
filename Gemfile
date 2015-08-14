@@ -52,6 +52,7 @@ gem 'syslogger', group: :production
 # code style
 group :development do
   gem 'rubocop', require: false
+  gem 'slim_lint'
 end
 
 # RDF
