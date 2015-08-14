@@ -39,7 +39,7 @@ gem 'rolify'
 # frontend
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
-gem 'slim'
+gem 'slim-rails'
 gem 'bootstrap-generators', group: :development
 gem 'angularjs-rails'
 
