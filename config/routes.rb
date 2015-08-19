@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'pages/index'
+
+  get 'pages/abit'
+
+  get 'pages/student'
+
+  get 'pages/graduate'
+
+  get 'pages/history'
+
+  get 'pages/staff'
+
+  get 'pages/contacts'
+
   get 'admin/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
