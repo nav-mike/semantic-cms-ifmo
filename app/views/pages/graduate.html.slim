@@ -1,2 +1,37 @@
-h1 Pages#graduate
-p Find me in app/views/pages/graduate.html.slim
+- title 'Выпускнику'
+
+p
+  = link_to 'Информация',
+            'http://ipm.ifmo.ru/wp-content/uploads/2014/10/InfoForGraduates.pdf',
+            target: '_blank'
+  |  для выпускников бакалавриата и специалитета.
+
+p
+  = link_to 'Информация',
+            'http://ipm.ifmo.ru/wp-content/uploads/2014/10/InfoForGraduatesMag.pdf',
+            target: '_blank'
+  |  о магистерской ВКР.
+
+p
+  a href='http://goo.gl/forms/92Oq5XG2ls' target='_blank' Форма
+  |  для предоставления информации о теме ВКР на кафедру.
+
+p
+  strong Шаблоны документов для ВКР бакалавра
+
+ul
+  li
+    a href='http://ipm.ifmo.ru/wp-content/uploads/2014/11/TemplateЗадание.docx' Задание
+  li
+    a href='http://ipm.ifmo.ru/wp-content/uploads/2014/11/TemplateАннотация.docx' Аннотация
+  li
+    a href='http://ipm.ifmo.ru/wp-content/uploads/2014/11/TemplateТекст.docx' Текст
+  li
+    = link_to 'Титульный лист пояснительной записки',
+              'http://ipm.ifmo.ru/wp-content/uploads/2014/11/TemplateПояснительная-записка.Титульник.docx'
+  li
+    = link_to 'Отзыв научного руководителя',
+              'http://ipm.ifmo.ru/wp-content/uploads/2014/11/TemplateОтзыв-руководителя.docx'
+  li
+    = link_to 'Отзыв рецензента',
+              'http://ipm.ifmo.ru/wp-content/uploads/2014/11/TemplateОтзыв-рецензента.docx'
