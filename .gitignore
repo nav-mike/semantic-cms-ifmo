@@ -21,7 +21,7 @@
 /.c9
 *.rbc
 capybara-*.html
-.rspec
+#.rspec
 /log
 /tmp
 /db/*.sqlite3
@@ -54,4 +54,3 @@ bower.json
 
 # Ignore pow environment settings
 .powenv
-

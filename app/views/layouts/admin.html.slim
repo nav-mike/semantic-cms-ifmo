@@ -155,11 +155,11 @@ html lang='en'
               hr
 
               p
-                |  This is a responsive dashboard-style layout that uses 
+                |  This is a responsive dashboard-style layout that uses
                 a href='http://www.getbootstrap.com' Bootstrap 3
                 | . You can use this template as a starting point to create something more unique.
               p
-                |  Visit the Bootstrap Playground at 
+                |  Visit the Bootstrap Playground at
                 a href='http://www.bootply.com' Bootply
                 |  to tweak this layout, or discover 1000's Bootstrap code examples and snippets.
 
@@ -189,7 +189,7 @@ html lang='en'
 
       /! /row
       /! /upper-section
-      
+
       /! lower-section
       .row
 
@@ -252,7 +252,7 @@ html lang='en'
               .tab-pane.active#profile
                 h4
                   i.glyphicon.glyphicon-user
-                |  Lorem profile dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+                |  Lorem profile dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
                 p Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. Aliquam in felis sit amet augue.
               .tab-pane#messages
                 h4
@@ -274,14 +274,14 @@ html lang='en'
             .panel-body
               .list-group
                 a.list-group-item.active href='#' Hosting virtual mailbox serv...
-                a.list-group-item href='#' Dedicated server doesn't...
+                a.list-group-item href='#' Dedicated server doesnt...
                 a.list-group-item href='#' RHEL 6 install on new...
 
           hr
 
           .alert.alert-info
             button.close type='button' data-dismiss='alert' ×
-            |  Please remember to 
+            |  Please remember to
             a href='#' Logout
             |  for classified security
 
@@ -316,4 +316,77 @@ html lang='en'
                 i.glyphicon.glyphicon-star
                 |  Social Media
 
-          hr /! 309
+          hr
+
+          .panel.panel-default
+            .panel-heading
+              .panel-title
+                i.glyphicon.glyphicon-wrench.pull-right
+                h4 Submit Request
+            .panel-body
+              form.form.form-vertical
+                .control-group
+                  label Name
+                  .controls
+                    input.form-control type='text' placeholder='Enter Name'
+                .control-group
+                  label Title
+                  .controls
+                    input.form-control type='password' placeholder='Password'
+                .control-group
+                  label Details
+                  .controls
+                    textarea.form-control
+                .control-group
+                  label Select
+                  .controls
+                    select.form-control
+                      option General Question
+                      option Server Issues
+                      option Billing Question
+                .control-group
+                  label
+                  .controls
+                    button.btn.btn-primary type='submit'
+                      | Post
+              /! /form
+            /! /panel content
+          /! /panel
+
+
+          .panel.panel-default
+            .panel-heading
+              .panel-title
+                h4 Engagement
+            .panel-body
+              .col-xs-4.text-center
+                img.img-circle.img-responsive src='http://placehold.it/80/BBBBBB/FFF'
+              .col-xs-4.text-center
+                img.img-circle.img-responsive src='http://placehold.it/80/EFEFEF/555'
+              .col-xs-4.text-center
+                img.img-circle.img-responsive src='http://placehold.it/80/EEEEEE/222'
+          /! /panel
+        /! /col
+      /! /row
+    /! container
+    /! /Main
+
+    footer.text-center
+      | This Bootstrap 3 dashboard layout is compliments of
+      a href='http://www.bootply.com/85850'
+        strong  Bootply.com
+
+    .modal#addWidgetModal
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close type='button' data-dismiss='modal' aria-hidden='true' ×
+            h4.modal-title Add Widget
+          .modal-body
+            p Add a widget stuff here...
+          .modal-footer
+            a.btn href='#' Close
+            a.btn.btn-primary href='#' Save changes
+        /! /.modal-content
+      /! /.modal-dialog
+    /! /.modal
