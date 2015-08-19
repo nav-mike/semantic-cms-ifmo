@@ -1,6 +1,8 @@
 # Public pages controller class
 # @author M. Navrotskiy m.navrotskiy@gmail.com
 class PagesController < ApplicationController
+  layout 'public', only: %i(index)
+
   def index
   end
 
