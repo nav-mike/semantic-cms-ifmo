@@ -1,0 +1,7 @@
+linters:
+  ConsecutiveControlStatements:
+    max_consecutive: 2
+  LineLength:
+    max: 100
+  RedundantDiv:
+    enabled: false

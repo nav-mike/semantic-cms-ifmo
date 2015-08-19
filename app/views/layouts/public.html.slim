@@ -1,0 +1,94 @@
+doctype html
+head
+  meta charset='utf-8'
+  meta http-equiv='X-UA-Compatible' content='IE=edge'
+  meta name='viewport' content='width=device-width, initial-scale=1'
+
+  = stylesheet_link_tag 'application', media: 'all'
+  = javascript_include_tag 'application'
+  = csrf_meta_tags
+
+body
+  .container-fluid#header
+    a href='http://ifmo.ru'
+      | Санкт-Петербургский национальный исследовательский университет
+      | информационных технологий, механики и оптики
+
+  .container
+    .page-header style='margin-top: 0px;'
+      h2
+        a href='http://ipm.ifmo.ru' title='Кафедра информатики и прикладной математики' rel='home'
+        | Кафедра информатики и прикладной математики
+        img style='float: right; margin-top: -10px;' src='http://ipm.ifmo.ru/wp-content/themes/ipm/rus_logo.png'
+
+    .navbar.navbar-default.navbar-static-top role='navigation'
+      .container
+        .navbar-header
+          button.navbar-toggle type='button' data-toggle='collapse' data-target='.navbar-collapse'
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+
+        .navbar-collapse.collapse
+          ul.nav.navbar-nav
+            li.menu-item.menu-item-type-custom.menu-item-object-custom.current-menu-item.current_page_item.menu-item-home.menu-item-24.current-menu-item#menu-item-40
+              a href='http://ipm.ifmo.ru' Главная
+            li.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-40#menu-item-40
+              a href='http://ipm.ifmo.ru/abit/' Абитуриенту
+            li.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-83#menu-item-83
+              a href='http://ipm.ifmo.ru/student/' Студенту
+            li.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-126#menu-item-126
+              a href='http://ipm.ifmo.ru/graduate' Выпускнику
+            li.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-34#menu-item-34
+              a href='http://ipm.ifmo.ru/history' История
+            li.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-36#menu-item-36
+              a href='http://ipm.ifmo.ru/staff' Сотрудники
+            li.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-29#menu-item-29
+              a href='http://ipm.ifmo.ru/contacts' Контакты
+            li.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-37#menu-item-37
+              a href='http://abit.ifmo.ru' target='_blank' Сайт &#171;Абитуриент ИТМО&#187;
+    p
+      | Кафедра информатики и прикладной математики совместо с кафедрой ВТ
+      | обеспечивает подготовку бакалавров и магистров по направлениям
+      strong «Программная инженерия»
+      | и
+      strong «Информатика и вычислительная техника»
+      | , а также обучение студентов со многих направлений подготовки НИУ ИТМО
+      | основам программирования и алгоритмических языков.
+    hr
+
+    h4 Подготовка бакалавров по направлению:
+    h5
+      b 09.03.04 «Программная инженерия»
+    p
+      | Профиль подготовки
+      a title='Программная инжерения - бакалавриат' href='http://ipm.ifmo.ru/bachelor-09-03-04/'
+        | «Разработка программно-информационных систем»
+    p
+      | Выпускникам присваивается степень (квалификация) &#171;бакалавр техники и технологии&#187;.
+      | Срок обучения - 4 года.
+
+    hr
+
+    h4 Подготовка магистров по направлениям:
+    h5
+      b 09.04.04 «Программная инженерия»
+    p
+      | Профиль подготовки
+      a title='Программная инженерия - магистратура' href='http://ipm.ifmo.ru/master-09-04-04'
+        | «Разработка программно-информационных систем»
+    h5
+      b 09.04.01 «Информатика и вычислительная техника»
+    p
+      | Профиль подготовки
+      a title='Информатика и вычислительная техника - магистратура' href='http://ipm.ifmo.ru/master-09-04-01'
+        | «Математические модели и компьютерное моделирование»
+    p
+      | Выпускникам присваивается степень (квалификация) &#171;магистр техники и технологии&#187;.
+      | Срок обучения – 2 года.
+
+    hr
+
+  #footer
+    .container кафедра информатики и прикладной математики

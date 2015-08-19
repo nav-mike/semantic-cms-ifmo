@@ -1,3 +1,5 @@
+# Public pages controller class
+# @author M. Navrotskiy m.navrotskiy@gmail.com
 class PagesController < ApplicationController
   def index
   end
