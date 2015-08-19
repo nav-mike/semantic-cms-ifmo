@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'pages/graduate.html.slim', type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'should have "Шаблоны документов для ВКР бакалавра"' do
+    render
+    expect(rendered).to have_content 'Шаблоны документов для ВКР бакалавра'
+  end
 end

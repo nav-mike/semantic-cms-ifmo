@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'pages/abit.html.slim', type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'should have text on page: "Как определиться с будущей профессией?"' do
+    render
+    expect(rendered).to have_content('Как определиться с будущей профессией?')
+  end
 end
