@@ -2,6 +2,9 @@ linters:
   ConsecutiveControlStatements:
     max_consecutive: 2
   LineLength:
+    exclude:
+      - 'app/views/layouts/public.html.slim'
+      - 'app/views/layouts/admin.html.slim'
     max: 100
   RedundantDiv:
     enabled: false
