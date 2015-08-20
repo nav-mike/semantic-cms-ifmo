@@ -1,18 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  # public pages
   get 'pages/index'
-
   get 'pages/abit'
-
   get 'pages/student'
-
   get 'pages/graduate'
-
   get 'pages/history'
-
   get 'pages/staff'
-
   get 'pages/contacts'
+  # /public pages
 
   get 'admin/index'
 
