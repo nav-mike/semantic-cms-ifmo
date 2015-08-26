@@ -31,6 +31,17 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# deployment
+group :deployment do
+  gem 'capistrano', require: false
+  gem 'capistrano-rvm', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma', require: false
+end
+
+gem 'puma'
+
 # auth
 gem 'devise'
 gem 'cancancan', '~> 1.10'
