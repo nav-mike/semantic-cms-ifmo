@@ -33,6 +33,9 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 
+# debug files
+debug.txt
+
 # TODO Comment out these rules if you are OK with secrets being uploaded to the repo
 config/initializers/secret_token.rb
 config/secrets.yml
