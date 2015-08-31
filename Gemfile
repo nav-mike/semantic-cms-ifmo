@@ -49,6 +49,9 @@ gem 'mongo'
 gem 'bson_ext'
 gem 'syslogger', group: :production
 
+# settings
+gem 'config'
+
 # code style
 group :development do
   gem 'rubocop', require: false
