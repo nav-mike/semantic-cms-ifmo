@@ -16,6 +16,10 @@ module Workspace
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
+    # Config gem
+    Bundler.require(*Rails.groups)
+    Config::Integration::Rails::Railtie.preload
+
     config.generators do |g|
       g.orm :active_record
       g.test_framework :rspec
