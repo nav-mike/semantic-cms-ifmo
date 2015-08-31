@@ -23,6 +23,6 @@
 
 set :output, './log/cron_log.log'
 
-every 1.minutes do
-  File.open('debug.txt', 'a') { |f| f.write "#{Time.zone.now}\n" }
+every 2.minutes do # check connection to sparql endpoint
+  rake 'sparql:check'
 end
