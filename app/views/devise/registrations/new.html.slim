@@ -1,0 +1,27 @@
+- title 'Please sign up'
+
+.container
+  = form_for(resource, as: resource_name, url: registration_path(resource_name),
+             html: {class: 'form-signin'}) do |f|
+    = devise_error_messages!
+
+    h2.form_signin-heading Please sign up
+    label.sr-only for='inputEmail' Email address
+    = f.email_field :email, class: 'form-control', id: 'inputEmail',
+                    autofocus: true, placeholder: 'Email address'
+
+    label.sr-only for='inputPassword'
+      | Password
+      - if @minimum_password_length
+        em= "(#{@minimum_password_length} characters minimum)"
+    = f.password_field :password, class: 'form-control',
+                       id: 'inputPassword', autocomplete: 'off', placeholder: 'Password'
+
+    label.sr-only for='inputPasswordConfirmation' Password confirmation
+    = f.password_field :password_confirmation, class: 'form-control',
+                       id: 'inputPasswordConfirmation', autocomplete: 'off',
+                       placeholder: 'Password confirmation'
+
+    = f.submit 'Sign up', class: 'btn btn-lg btn-success btn-block'
+
+    = render 'devise/shared/links'
