@@ -33,6 +33,12 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 
+# debug files
+debug.txt
+
+# app config file
+/config/sparql.yml
+
 # TODO Comment out these rules if you are OK with secrets being uploaded to the repo
 config/initializers/secret_token.rb
 config/secrets.yml
@@ -54,3 +60,7 @@ bower.json
 
 # Ignore pow environment settings
 .powenv
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
