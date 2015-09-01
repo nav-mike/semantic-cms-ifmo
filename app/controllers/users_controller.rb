@@ -11,6 +11,7 @@ class UsersController < AuthenticateController
   end
 
   def new
+    @user = User.new
   end
 
   def create
