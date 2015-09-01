@@ -1,0 +1,20 @@
+doctype html
+html lang='en'
+  head
+    meta http-equiv='content-type' content='text/html; charset=UTF-8'
+    meta charset='utf-8'
+
+    title= "#{yield(:title)} | Admin pages"
+
+    meta name='generator' content='Bootply'
+    meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'
+    meta name='description' content='Bootstrap 3 Example dashboard / admin / control panel layout using Bootstrap 3.'
+
+    = stylesheet_link_tag 'application', media: 'all'
+    = stylesheet_link_tag 'bootply', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+
+  body
+
+    == yield

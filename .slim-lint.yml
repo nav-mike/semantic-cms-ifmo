@@ -5,6 +5,7 @@ linters:
     exclude:
       - 'app/views/layouts/public.html.slim'
       - 'app/views/layouts/admin.html.slim'
+      - 'app/views/layouts/application.html.slim'
     max: 100
   RedundantDiv:
     enabled: false

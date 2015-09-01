@@ -1,6 +1,6 @@
 # Admin controller class
 # @author M. Navrotskiy m.navrotskiy@gmail.com
-class AdminController < ApplicationController
+class AdminController < AuthenticateController
   layout 'admin', only: [:index]
 
   def index
