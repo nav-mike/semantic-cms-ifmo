@@ -40,6 +40,7 @@ gem 'rolify'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'slim-rails'
+gem 'simple_form'
 gem 'bootstrap-generators', group: :development
 gem 'angularjs-rails'
 # grid view
