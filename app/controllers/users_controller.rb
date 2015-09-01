@@ -4,6 +4,7 @@ class UsersController < AuthenticateController
   layout 'admin'
 
   def index
+    @users_grid = initialize_grid(User)
   end
 
   def show
