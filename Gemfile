@@ -33,11 +33,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # deployment
 group :deployment do
-  gem 'capistrano', require: false
-  gem 'capistrano-rvm', require: false
-  gem 'capistrano-rails', require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma', require: false
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
 end
 gem 'foreman'
 gem 'unicorn'
