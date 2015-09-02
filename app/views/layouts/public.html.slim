@@ -18,6 +18,10 @@ body
       |  информационных технологий, механики и оптики
 
   .container
+    pre
+      - flash.each do |type, message|
+        = "#{type}: #{message}"
+
     .page-header style='margin-top: 0px;'
       h2
         a href='/pages/index' title='Кафедра информатики и прикладной математики' rel='home'

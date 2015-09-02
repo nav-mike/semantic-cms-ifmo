@@ -6,4 +6,10 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  before_create :add_default_role
+
+  def add_default_role
+    add_role :admin
+  end
 end

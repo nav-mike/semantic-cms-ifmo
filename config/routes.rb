@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # users
-  devise_for :users
+  devise_for :users, path: ''
   resources :users
 
   # public pages

@@ -11,13 +11,6 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  describe 'GET #show' do
-    it 'returns http success' do
-      get :show
-      expect(response).to have_http_status(:success)
-    end
-  end
-
   describe 'GET #new' do
     it 'returns http success' do
       get :new
@@ -25,10 +18,20 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  describe 'GET #create' do
-    it 'returns http success' do
-      get :create
-      expect(response).to have_http_status(:success)
+  describe 'POST #create' do
+    it 'redirect to users url' do
+      post :create, user: {email: Faker::Internet.email, password: '1234567890'}
+      expect(response).to redirect_to users_url
+    end
+
+    it 'render new' do
+      post :create, user: {email: Faker::Internet.email, password: '123'}
+      expect(response).to render_template :new
+    end
+
+    it 'create new record' do
+      post :create, user: {email: Faker::Internet.email, password: '1234567890'}
+      expect(User.count).to eq 2
     end
   end
 
