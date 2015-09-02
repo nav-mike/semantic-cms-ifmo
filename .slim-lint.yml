@@ -2,10 +2,15 @@ linters:
   ConsecutiveControlStatements:
     max_consecutive: 2
   LineLength:
+    include:
+      - 'app/views/devise/confirmations/new.html.slim'
+    max: 150
+  LineLength:
     exclude:
       - 'app/views/layouts/public.html.slim'
       - 'app/views/layouts/admin.html.slim'
       - 'app/views/layouts/application.html.slim'
+      - 'app/views/devise/confirmations/new.html.slim'
     max: 100
   RedundantDiv:
     enabled: false

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  # users
   devise_for :users
+  resources :users
 
   # public pages
   get 'pages/index'

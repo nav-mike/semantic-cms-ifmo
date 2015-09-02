@@ -1,0 +1,18 @@
+- title 'Resend confirmation instructions'
+
+.container
+  = form_for(resource, as: resource_name, url: confirmation_path(resource_name),
+             html: {class: 'form-signin', method: :post}) do |f|
+
+    = devise_error_messages!
+
+    h2.form-signin-heading Resend confirmation instructions
+
+    label.sr-only for='inputEmail' Email address
+    = f.email_field :email, class: 'form-control', id: 'inputEmail', autofocus: true,
+                    placeholder: 'Email address',
+                    value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
+
+    = f.submit 'Resend confirmation instructions'
+
+    = render 'devise/shared/links'

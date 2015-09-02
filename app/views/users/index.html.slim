@@ -1,0 +1,25 @@
+- title 'Users'
+
+.page-header
+  = link_to new_user_path, class: 'btn btn-primary' do
+    i.glyphicon.glyphicon-plus
+    |  New User
+
+h1 Users
+
+== grid(@users_grid, show_filters: :no) do |g|
+  - g.column name: 'ID', attribute: 'id'
+  - g.column name: 'Email', attribute: 'email'
+  - g.column name: 'Role' do |user|
+    - user.roles.first.name
+  - g.column name: 'Last sign in' do |user|
+    - user.last_sign_in_at.strftime('%H:%M %d.%m.%Y')
+  - g.column name: 'Created at' do |user|
+    - user.created_at.strftime('%H:%M %d.%m.%Y')
+  - g.column name: '' do |user|
+    - link_to edit_user_path(user), title: 'Edit user', class: 'btn btn-warning btn-xs' do
+      i.glyphicon.glyphicon-edit
+  - g.column name: '' do |user|
+    - link_to user, title: 'Delete', data: {confirm: 'Are you sure?'},
+              method: :delete, class: 'btn btn-danger btn-xs' do
+      i.glyphicon.glyphicon-remove

@@ -1,0 +1,27 @@
+- title 'Change your password'
+
+.container
+  = form_for(resource, as: resource_name, url: password_path(resource_name),
+             html: {class: 'form-signin', method: :put}) do |f|
+
+    = devise_error_messages!
+    = f.hidden_field :reset_password_token
+
+    h2.form-signin-heading Change your password
+
+    label.sr-only for='inputPassword'
+      | New password
+      - if @minimum_password_length
+        em= "(#{@minimum_password_length} characters minimum)"
+    = f.password_field :password, class: 'form-control',
+                       id: 'inputPassword', autocomplete: 'off',
+                       placeholder: 'New password'
+
+    label.sr-only for='inputPasswordConfirmation' Confirm new password
+    = f.password_field :password_confirmation, class: 'form-control',
+                       id: 'inputPasswordConfirmation', autocomplete: 'off',
+                       placeholder: 'Confirm new password'
+
+    = f.submit 'Change my password', class: 'btn btn-lg btn-warning btn-block'
+
+    = render 'devise/shared/links'

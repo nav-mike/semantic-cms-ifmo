@@ -51,8 +51,12 @@ gem 'rolify'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'slim-rails'
+gem 'simple_form'
 gem 'bootstrap-generators', group: :development
 gem 'angularjs-rails'
+# grid view
+gem 'wice_grid', '3.6.0.pre4'
+gem 'font-awesome-sass', '~> 4.3'
 
 # logging
 gem 'mongodb_logger'
