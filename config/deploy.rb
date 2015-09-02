@@ -59,7 +59,7 @@ namespace :deploy do
       execute "mkdir #{shared_path}/system"
       sudo 'ln -s /var/log/upstart /var/www/log/upstart'
 
-      upload!('shared/database.yml', "#{shared_path}/config/database.yml")
+      # upload!('shared/database.yml', "#{shared_path}/config/database.yml")
 
       upload!('shared/Procfile', "#{shared_path}/Procfile")
 
@@ -80,7 +80,7 @@ namespace :deploy do
   desc 'Create symlink'
   task :symlink do
     on roles(:all) do
-      execute "ln -s #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+      # execute "ln -s #{shared_path}/config/database.yml #{release_path}/config/database.yml"
       execute "ln -s #{shared_path}/Procfile #{release_path}/Procfile"
       execute "ln -s #{shared_path}/system #{release_path}/public/system"
     end
