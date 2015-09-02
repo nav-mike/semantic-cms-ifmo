@@ -36,8 +36,10 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe 'GET #edit' do
+    let!(:user) { FactoryGirl.create :user }
+
     it 'returns http success' do
-      get :edit
+      get :edit, id: user.id
       expect(response).to have_http_status(:success)
     end
   end

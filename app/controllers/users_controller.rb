@@ -3,6 +3,8 @@
 class UsersController < AuthenticateController
   layout 'admin'
 
+  before_action :set_user, only: %i(edit update destroy)
+
   def index
     @users_grid = initialize_grid(User)
   end
@@ -33,6 +35,10 @@ class UsersController < AuthenticateController
   end
 
   private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 
   def user_params
     if params[:user][:password].blank?

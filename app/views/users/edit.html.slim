@@ -1,2 +1,9 @@
-h1 Users#edit
-p Find me in app/views/users/edit.html.slim
+- title 'Editing user'
+
+= link_to users_path, class: 'btn btn-default'
+  = fa_icon 'list-alt fw'
+  |  Users
+
+h1 Editing user
+
+= render 'form'
