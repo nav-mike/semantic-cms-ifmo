@@ -58,10 +58,12 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  describe 'GET #delete' do
+  describe 'GET #destroy' do
+    let!(:user) { FactoryGirl.create :user }
+
     it 'returns http success' do
-      get :delete
-      expect(response).to have_http_status(:success)
+      delete :destroy, id: user.id
+      expect(response).to redirect_to users_url
     end
   end
 end
