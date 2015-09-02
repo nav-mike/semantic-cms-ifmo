@@ -1,9 +1,52 @@
-set :repo_url, '80.87.200.36'
+set :repo_url, 'git@github.com:nav-mike/semantic-cms-ifmo.git'
 set :application, 'semantic-cms-ifmo'
 application = 'semantic-cms-ifmo'
 set :rvm_type, :user
-set :rvm_ruby_version, '2.2.1p85'
+set :rvm_ruby_version, '2.2.1'
 set :deploy_to, '/var/www/apps/semantic-cms-ifmo'
+set :branch, fetch(:branch, 'prototype-ipm')
+
+namespace :foreman do
+  desc 'Start server'
+  task :start do
+    on roles(:all) do
+      sudo "start #{application}"
+    end
+  end
+
+  desc 'Stop server'
+  task :stop do
+    on roles(:all) do
+      sudo "stop #{application}"
+    end
+  end
+
+  desc 'Restart server'
+  task :restart do
+    on roles(:all) do
+      sudo "restart #{application}"
+    end
+  end
+
+  desc 'Server status'
+  task :status do
+    on roles(:all) do
+      execute "initctl list | grep #{application}"
+    end
+  end
+end
+
+namespace :git do
+  desc 'Deploy'
+  task :deploy do
+    ask(:message, 'Commit message?')
+    run_locally do
+      execute 'git add -A'
+      execute "git commit -m '#{fetch(:message)}'"
+      execute 'git push'
+    end
+  end
+end
 
 namespace :deploy do
   desc 'Setup'
@@ -81,46 +124,4 @@ namespace :deploy do
   before :setup, 'deploy:starting'
   before :setup, 'deploy:updating'
   before :setup, 'bundler:install'
-end
-
-namespace :foreman do
-  desc 'Start server'
-  task :start do
-    on roles(:all) do
-      sudo "start #{application}"
-    end
-  end
-
-  desc 'Stop server'
-  task :stop do
-    on roles(:all) do
-      sudo "stop #{application}"
-    end
-  end
-
-  desc 'Restart server'
-  task :restart do
-    on roles(:all) do
-      sudo "restart #{application}"
-    end
-  end
-
-  desc 'Server status'
-  task :status do
-    on roles(:all) do
-      execute "initctl list | grep #{application}"
-    end
-  end
-end
-
-namespace :git do
-  desc 'Deploy'
-  task :deploy do
-    ask(:message, 'Commit message?')
-    run_locally do
-      execute 'git add -A'
-      execute "git commit -m '#{fetch(:message)}'"
-      execute 'git push'
-    end
-  end
 end
