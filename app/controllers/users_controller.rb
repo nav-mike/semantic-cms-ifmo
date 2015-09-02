@@ -29,6 +29,11 @@ class UsersController < AuthenticateController
   end
 
   def update
+    if @user.update(user_params)
+      redirect_to users_url, notice: 'User was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def delete

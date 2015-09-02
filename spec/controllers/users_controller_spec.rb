@@ -45,9 +45,16 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe 'GET #update' do
-    it 'returns http success' do
-      get :update
-      expect(response).to have_http_status(:success)
+    let!(:user) { FactoryGirl.create :user }
+
+    it 'redirect to users url' do
+      put :update, user: {email: Faker::Internet.email}, id: user.id
+      expect(response).to redirect_to users_url
+    end
+
+    it 'render edit' do
+      put :update, user: {email: Faker::Internet.email, password: '123'}, id: user.id
+      expect(response).to render_template :edit
     end
   end
 
