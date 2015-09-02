@@ -40,7 +40,8 @@ group :deployment do
   gem 'capistrano3-puma', require: false
 end
 gem 'foreman'
-gem 'puma'
+gem 'unicorn'
+# gem 'puma'
 
 # auth
 gem 'devise'
