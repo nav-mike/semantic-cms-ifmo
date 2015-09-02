@@ -35,7 +35,7 @@ html lang='en'
                 li
                   a href='#' My profile
                 li
-                  a href='#'
+                  = link_to destroy_user_session_path, method: :delete
                     i.glyphicon.glyphicon-lock
                     |  Logout
     /! /Header
