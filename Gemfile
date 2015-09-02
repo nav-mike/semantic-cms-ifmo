@@ -39,7 +39,7 @@ group :deployment do
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma', require: false
 end
-
+gem 'foreman'
 gem 'puma'
 
 # auth
