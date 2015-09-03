@@ -1,127 +1,84 @@
-set :repo_url, 'git@github.com:nav-mike/semantic-cms-ifmo.git'
-set :application, 'semantic-cms-ifmo'
-application = 'semantic-cms-ifmo'
-set :rvm_type, :user
-set :rvm_ruby_version, '2.2.1'
-set :deploy_to, '/var/www/apps/semantic-cms-ifmo'
-set :branch, fetch(:branch, 'prototype-ipm')
+# Change these
+server '80.87.200.36', port: 22, roles: [:web, :app, :db], primary: true
 
-namespace :foreman do
-  desc 'Start server'
-  task :start do
-    on roles(:all) do
-      sudo "start #{application}"
+set :repo_url,        'git@github.com:nav-mike/semantic-cms-ifmo.git'
+set :application,     'semantic-cms-ifmo'
+set :user,            'deployer'
+set :puma_threads,    [4, 16]
+set :puma_workers,    0
+
+# Don't change these unless you know what you're doing
+set :pty,             true
+set :use_sudo,        false
+set :stage,           :production
+set :deploy_via,      :remote_cache
+set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
+set :puma_bind,       "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
+set :puma_state,      "#{shared_path}/tmp/pids/puma.state"
+set :puma_pid,        "#{shared_path}/tmp/pids/puma.pid"
+set :puma_access_log, "#{release_path}/log/puma.error.log"
+set :puma_error_log,  "#{release_path}/log/puma.access.log"
+set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
+set :puma_preload_app, true
+set :puma_worker_timeout, nil
+set :puma_init_active_record, true  # Change to false when not using ActiveRecord
+
+## Defaults:
+# set :scm,           :git
+set :branch,        'prototype-ipm'
+# set :format,        :pretty
+# set :log_level,     :debug
+# set :keep_releases, 5
+
+## Linked Files & Directories (Default None):
+# set :linked_files, %w{config/database.yml}
+# set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+
+namespace :puma do
+  desc 'Create Directories for Puma Pids and Socket'
+  task :make_dirs do
+    on roles(:app) do
+      execute "mkdir #{shared_path}/tmp/sockets -p"
+      execute "mkdir #{shared_path}/tmp/pids -p"
     end
   end
 
-  desc 'Stop server'
-  task :stop do
-    on roles(:all) do
-      sudo "stop #{application}"
-    end
-  end
-
-  desc 'Restart server'
-  task :restart do
-    on roles(:all) do
-      sudo "restart #{application}"
-    end
-  end
-
-  desc 'Server status'
-  task :status do
-    on roles(:all) do
-      execute "initctl list | grep #{application}"
-    end
-  end
-end
-
-namespace :git do
-  desc 'Deploy'
-  task :deploy do
-    ask(:message, 'Commit message?')
-    run_locally do
-      execute 'git add -A'
-      execute "git commit -m '#{fetch(:message)}'"
-      execute 'git push'
-    end
-  end
+  before :start, :make_dirs
 end
 
 namespace :deploy do
-  desc 'Setup'
-  task :setup do
-    on roles(:all) do
-      execute "mkdir  #{shared_path}/config/"
-      execute "mkdir  /var/www/apps/#{application}/run/"
-      execute "mkdir  /var/www/apps/#{application}/log/"
-      execute "mkdir  /var/www/apps/#{application}/socket/"
-      execute "mkdir #{shared_path}/system"
-      sudo 'ln -s /var/log/upstart /var/www/log/upstart'
-
-      # upload!('shared/database.yml', "#{shared_path}/config/database.yml")
-
-      upload!('shared/Procfile', "#{shared_path}/Procfile")
-
-      upload!('shared/nginx.conf', "#{shared_path}/nginx.conf")
-      sudo 'stop nginx'
-      sudo 'rm -f /usr/local/nginx/conf/nginx.conf'
-      sudo "ln -s #{shared_path}/nginx.conf /usr/local/nginx/conf/nginx.conf"
-      sudo 'start nginx'
-
-      within release_path do
-        with rails_env: fetch(:rails_env) do
-          execute :rake, 'db:create'
-        end
+  desc "Make sure local git is in sync with remote."
+  task :check_revision do
+    on roles(:app) do
+      unless `git rev-parse HEAD` == `git rev-parse origin/prototype-ipm`
+        puts "WARNING: HEAD is not the same as origin/prototype-ipm"
+        puts "Run `git push` to sync changes."
+        exit
       end
     end
   end
 
-  desc 'Create symlink'
-  task :symlink do
-    on roles(:all) do
-      # execute "ln -s #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-      execute "ln -s #{shared_path}/Procfile #{release_path}/Procfile"
-      execute "ln -s #{shared_path}/system #{release_path}/public/system"
-    end
-  end
-
-  desc 'Foreman init'
-  task :foreman_init do
-    on roles(:all) do
-      foreman_temp = '/var/www/tmp/foreman'
-      execute "mkdir -p #{foreman_temp}"
-
-      execute "ln -s #{release_path} #{current_path}"
-
-      within current_path do
-        execute "cd #{current_path}"
-        execute :bundle, "exec foreman export upstart #{foreman_temp} -a #{application} -u deployer -l /var/www/apps/#{application}/log -d #{current_path}"
-      end
-      sudo "mv #{foreman_temp}/* /etc/init/"
-      sudo "rm -r #{foreman_temp}"
+  desc 'Initial Deploy'
+  task :initial do
+    on roles(:app) do
+      before 'deploy:restart', 'puma:start'
+      invoke 'deploy'
     end
   end
 
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      sudo "restart #{application}"
+      invoke 'puma:restart'
     end
   end
 
-  after :finishing, 'deploy:cleanup'
-  after :finishing, 'deploy:restart'
-
-  after :updating, 'deploy:symlink'
-
-  after :setup, 'deploy:foreman_init'
-
-  after :foreman_init, 'foreman:start'
-
-  before :foreman_init, 'rvm:hook'
-
-  before :setup, 'deploy:starting'
-  before :setup, 'deploy:updating'
-  before :setup, 'bundler:install'
+  before :starting,     :check_revision
+  after  :finishing,    :compile_assets
+  after  :finishing,    :cleanup
+  after  :finishing,    :restart
 end
+
+# ps aux | grep puma    # Get puma pid
+# kill -s SIGUSR2 pid   # Restart puma
+# kill -s SIGTERM pid   # Stop puma

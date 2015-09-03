@@ -1,1 +1,0 @@
-web: bundle exec unicorn_rails -c /var/www/apps/semantic-cms-ifmo/current/config/unicorn.rb -E production
