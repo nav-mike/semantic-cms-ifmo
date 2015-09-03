@@ -159,6 +159,7 @@ GEM
       vegas (~> 0.1.8)
     multi_json (1.11.1)
     mustache (0.99.8)
+    mysql2 (0.3.17)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
@@ -338,6 +339,7 @@ DEPENDENCIES
   jquery-rails
   mongo
   mongodb_logger
+  mysql2
   puma
   rails (= 4.2.1)
   rolify

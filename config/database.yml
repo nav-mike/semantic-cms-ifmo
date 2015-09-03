@@ -21,5 +21,11 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 16
+  username: root
+  password: 'i789fm987o'
+  socket: /var/run/mysqld/mysqld.sock
+  database: semantic_cms_ifmo_production
