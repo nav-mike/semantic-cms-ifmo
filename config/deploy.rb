@@ -61,8 +61,15 @@ namespace :deploy do
   desc 'Initial Deploy'
   task :initial do
     on roles(:app) do
-      before 'deploy:restart', 'puma:start'
+      before 'deploy:restart', 'puma:start', 'deploy:db_create'
       invoke 'deploy'
+    end
+  end
+
+  desc 'Rub migrations'
+  task :db_create do
+    on roles (:db) do
+      invoke 'db:migrate'
     end
   end
 
