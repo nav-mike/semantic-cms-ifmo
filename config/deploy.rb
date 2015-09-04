@@ -26,7 +26,7 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 ## Defaults:
 set :scm,           :git
 set :branch,        'prototype-ipm'
-set :format,        :pretty
+set :format,     /   :pretty
 set :log_level,     :debug
 set :keep_releases, 5
 
@@ -76,7 +76,7 @@ namespace :deploy do
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
-  after  :finishing,    :
+  after  :finishing,    :restart
 end
 
 # ps aux | grep puma    # Get puma pid
