@@ -59,3 +59,9 @@
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
+
+set :stage, :production
+
+role :app, %w{deployer@80.87.200.36}
+role :web, %w{deployer@80.87.200.36}
+role :db,  %w{deployer@80.87.200.36}

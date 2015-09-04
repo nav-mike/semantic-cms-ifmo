@@ -1,11 +1,12 @@
 # Load DSL and Setup Up Stages
 require 'capistrano/setup'
-require 'capistrano/deploy'
 
-require 'capistrano/rails'
-require 'capistrano/rails/migrations'
-require 'capistrano/bundler'
+# Includes default deployment tasks
+require 'capistrano/deploy'
 require 'capistrano/rvm'
+require 'capistrano/bundler'
+require 'capistrano/rails/migrations'
+require 'capistrano/rails/assets'
 require 'capistrano/puma'
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.

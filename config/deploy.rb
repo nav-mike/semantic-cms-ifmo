@@ -24,11 +24,11 @@ set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
 
 ## Defaults:
-# set :scm,           :git
+set :scm,           :git
 set :branch,        'prototype-ipm'
-# set :format,        :pretty
-# set :log_level,     :debug
-# set :keep_releases, 5
+set :format,        :pretty
+set :log_level,     :debug
+set :keep_releases, 5
 
 ## Linked Files & Directories (Default None):
 # set :linked_files, %w{config/database.yml}
@@ -76,8 +76,7 @@ namespace :deploy do
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
-  after  :finishing,    :restart
-  after "deploy:initial", "db:create"
+  after  :finishing,    :
 end
 
 # ps aux | grep puma    # Get puma pid
