@@ -61,7 +61,7 @@ namespace :deploy do
   desc 'Initial Deploy'
   task :initial do
     on roles(:app) do
-      before 'deploy:restart', 'puma:start', 'db:create'
+      before 'deploy:restart', 'puma:start'
       invoke 'deploy'
     end
   end
@@ -77,7 +77,7 @@ namespace :deploy do
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
-  after "deploy:update_code", "deploy:migrate"
+  after "deploy:initial", "db:create"
 end
 
 # ps aux | grep puma    # Get puma pid
