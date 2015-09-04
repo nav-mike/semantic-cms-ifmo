@@ -1,7 +1,6 @@
-default: &default
-  database: logger
-  capsize: <%= 400.megabytes %>
-  user: 'mongodblogger'
-  password: 'MongoDbLoggerPassword!'
-  host: 'ds055832.mongolab.com'
-  port: '55832'
+production:
+  database: my_app
+  capsize: <%= 500.megabytes %>
+  host: localhost
+  port: 27017
+  replica_set: true
