@@ -1,2 +1,9 @@
-h1 Settings#new
-p Find me in app/views/settings/new.html.slim
+- title 'New setting'
+
+= link_to settings_path, class: 'btn btn-default'
+  = fa_icon 'list-alt fw'
+  |  Settings
+
+h1 Add new setting
+
+= render 'form'

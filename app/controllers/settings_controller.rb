@@ -10,6 +10,16 @@ class SettingsController < AuthenticateController
   end
 
   def new
+    @setting = Setting.new
+  end
+
+  def create
+    @setting = Setting.new(setting_params)
+    if @setting.save
+      redirect_to settings_url, notice: "#{@setting.key} was successfully created."
+    else
+      render :new
+    end
   end
 
   def edit

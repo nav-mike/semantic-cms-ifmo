@@ -18,6 +18,18 @@ RSpec.describe SettingsController, type: :controller do
     end
   end
 
+  describe 'POST #create' do
+    it 'redirect to settings url' do
+      post :create, setting: {key: Faker::Lorem.word, value: Faker::Lorem.word}
+      expect(response).to redirect_to settings_url
+    end
+
+    it 'create new record' do
+      post :create, setting: {key: Faker::Lorem.word, value: Faker::Lorem.word}
+      expect(Setting.count).to eq 1
+    end
+  end
+
   describe 'GET #edit' do
     let!(:setting) { FactoryGirl.create :setting }
 
