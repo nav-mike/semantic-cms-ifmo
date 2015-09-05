@@ -4,6 +4,7 @@ class SettingsController < AuthenticateController
   layout 'admin'
 
   def index
+    @settings_grid = initialize_grid(Setting)
   end
 
   def new
