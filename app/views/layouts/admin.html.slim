@@ -33,7 +33,7 @@ html lang='en'
                   span.caret
               ul.dropdown-menu#g-account-menu role='menu'
                 li
-                  a href='#' My profile
+                  a href='#{edit_user_path(current_user)}' My profile
                 li
                   = link_to destroy_user_session_path, method: :delete
                     i.glyphicon.glyphicon-lock

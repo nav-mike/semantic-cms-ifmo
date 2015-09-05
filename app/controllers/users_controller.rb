@@ -9,9 +9,6 @@ class UsersController < AuthenticateController
     @users_grid = initialize_grid(User)
   end
 
-  def show
-  end
-
   def new
     @user = User.new
   end
