@@ -44,7 +44,7 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  describe 'GET #update' do
+  describe 'PUT #update' do
     let!(:user) { FactoryGirl.create :user }
 
     it 'redirect to users url' do
@@ -58,7 +58,7 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  describe 'GET #destroy' do
+  describe 'DELETE #destroy' do
     let!(:user) { FactoryGirl.create :user }
 
     it 'returns http success' do

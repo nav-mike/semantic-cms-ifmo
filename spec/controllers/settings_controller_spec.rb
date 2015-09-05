@@ -19,9 +19,20 @@ RSpec.describe SettingsController, type: :controller do
   end
 
   describe 'GET #edit' do
+    let!(:setting) { FactoryGirl.create :setting }
+
     it 'returns http success' do
-      get :edit
+      get :edit, id: setting.id
       expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe 'PUT #update' do
+    let!(:setting) { FactoryGirl.create :setting }
+
+    it 'redirect to settings url' do
+      put :update, setting: {key: Faker::Lorem.word, value: Faker::Lorem.word}, id: setting.id
+      expect(response).to redirect_to settings_url
     end
   end
 

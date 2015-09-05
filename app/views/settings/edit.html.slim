@@ -1,2 +1,9 @@
-h1 Settings#edit
-p Find me in app/views/settings/edit.html.slim
+- title "Editing #{@setting.key}"
+
+= link_to settings_path, class: 'btn btn-default'
+  = fa_icon 'list-alt fw'
+  |  Settings
+
+h1 Editing #{@setting.key}
+
+= render 'form'
