@@ -25,8 +25,9 @@ ActiveRecord::Schema.define(version: 20150905134446) do
   add_index "roles", ["name"], name: "index_roles_on_name"
 
   create_table "settings", force: :cascade do |t|
-    t.string "key",   null: false
-    t.string "value", null: false
+    t.string  "key",                        null: false
+    t.string  "value",                      null: false
+    t.boolean "can_removed", default: true, null: false
   end
 
   add_index "settings", ["key"], name: "dimensions", unique: true
