@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Setting, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'remove if can_removed is false' do
+    setting = FactoryGirl.create :setting, can_removed: false
+    setting.destroy
+    expect(Setting.count).to eq 1
+  end
 end
