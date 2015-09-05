@@ -1,5 +1,5 @@
 = simple_form_for @setting do |f|
-  = f.input :key
+  = f.input :key, input_html: {disabled: ('disabled' unless @setting.can_removed)}
   = f.input :value
   .form-group
     .col-sm-offset-3.col-sm-9
