@@ -1,15 +1,10 @@
 Rails.application.routes.draw do
-  get 'settings/index'
-
-  get 'settings/new'
-
-  get 'settings/edit'
-
-  get 'settings/destroy'
-
   # users
   devise_for :users, path: ''
   resources :users, except: :show
+
+  # settings
+  resources :settings, except: :show
 
   # public pages
   get 'pages/index'
