@@ -14,15 +14,14 @@ head
 body
   .container-fluid#header
     a href='http://ifmo.ru'
-      | Санкт-Петербургский национальный исследовательский университет
-      |  информационных технологий, механики и оптики
+      | #{Setting.university_title}
 
   .container
 
     .page-header style='margin-top: 0px;'
       h2
         a href='/pages/index' title='Кафедра информатики и прикладной математики' rel='home'
-          | Кафедра информатики и прикладной математики
+          | #{Setting.department_title}
           img style='float: right; margin-top: -10px;' src='http://ipm.ifmo.ru/wp-content/themes/ipm/rus_logo.png'
 
     .navbar.navbar-default.navbar-static-top role='navigation'
@@ -58,4 +57,4 @@ body
     hr
 
   #footer
-    .container кафедра информатики и прикладной математики
+    .container #{Setting.department_title}
