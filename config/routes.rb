@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+  get 'settings/index'
+
+  get 'settings/new'
+
+  get 'settings/edit'
+
+  get 'settings/destroy'
+
   # users
   devise_for :users, path: ''
-  resources :users
+  resources :users, except: :show
 
   # public pages
   get 'pages/index'
@@ -14,6 +22,7 @@ Rails.application.routes.draw do
   # /public pages
 
   get 'admin/index'
+  get 'admin' => 'admin#index'
 
   root 'pages#index'
 
