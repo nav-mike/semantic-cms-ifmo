@@ -34,6 +34,9 @@ class SettingsController < AuthenticateController
   end
 
   def destroy
+    name = @setting.key
+    @setting.destroy
+    redirect_to settings_url, notice: "#{name} was successfully destroyed."
   end
 
   private

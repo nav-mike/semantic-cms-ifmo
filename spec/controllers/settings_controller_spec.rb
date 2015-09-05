@@ -48,10 +48,12 @@ RSpec.describe SettingsController, type: :controller do
     end
   end
 
-  describe 'GET #destroy' do
+  describe 'DELETE #destroy' do
+    let!(:setting) { FactoryGirl.create :setting }
+
     it 'returns http success' do
-      get :destroy
-      expect(response).to have_http_status(:success)
+      get :destroy, id: setting.id
+      expect(response).to redirect_to settings_url
     end
   end
 end
