@@ -27,6 +27,8 @@ Metrics/PerceivedComplexity:
 
 Style/Documentation:
   Enabled: true
+  Exclude:
+      - 'db/migrate/*'
 
 Style/SpaceInsideHashLiteralBraces:
   EnforcedStyle: no_space

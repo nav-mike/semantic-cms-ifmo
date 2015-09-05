@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150820090838) do
+ActiveRecord::Schema.define(version: 20150905133216) do
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20150820090838) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
+
+  create_table "settings", force: :cascade do |t|
+    t.string "key",   null: false
+    t.string "value", null: false
+  end
+
+  add_index "settings", ["key"], name: "dimensions", unique: true
+  add_index "settings", ["key"], name: "index_settings_on_key"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
