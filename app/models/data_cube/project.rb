@@ -2,11 +2,11 @@
 # Class of Project
 # @author M. Navrotskiy m.navrotskiy@gmail.com
 class Project
-  attr_accessor :link, :peoples, :github_link, :twitter, :leader, :partners, :keywords
+  attr_accessor :link, :people, :github_link, :twitter, :leader, :partners, :keywords
   attr_accessor :is_active, :title, :name, :logo, :start_date, :end_date, :departments
   attr_accessor :publications, :description
 
-  def initialize(options)
+  def initialize(options = {})
     init_peoples options
 
     init_project_info options
@@ -21,7 +21,7 @@ class Project
     @leader = options[:leader] || nil
     @departments = options[:departments] || []
     @partners = options[:partners] || []
-    @peoples = options[:peoples] || []
+    @people = options[:people] || []
   end
 
   def init_social(options)
