@@ -22,6 +22,95 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#department -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#department"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#departments -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#departments">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#laboratories -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#laboratories">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#laboratory -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#laboratory"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#leader -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#leader"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#partners -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#partners">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#people -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#people">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#projects -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#projects">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#publications -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#publications">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#research_group -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#research_group"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#universtity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#universtity"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Data properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -53,6 +142,12 @@
     <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#biography -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#biography"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#cv_link -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#cv_link"/>
     
 
 
