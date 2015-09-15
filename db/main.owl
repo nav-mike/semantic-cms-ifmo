@@ -125,6 +125,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#academic_rank -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#academic_rank"/>
+    
+
+
     <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#address -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#address"/>
@@ -135,6 +141,14 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#arxiv">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#social_network"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#awards -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#awards">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
     </owl:DatatypeProperty>
     
 
@@ -160,6 +174,12 @@
     <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#description -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#description"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#education -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#education"/>
     
 
 
@@ -283,6 +303,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#publication_string -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#publication_string"/>
+    
+
+
     <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#research_tags -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#research_tags">
@@ -376,6 +402,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Publication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Publication"/>
+    
+
+
     <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#ResearchGroup -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#ResearchGroup">
@@ -384,6 +416,34 @@
         <rdfs:comment xml:lang="en">Research group (laboratory, department).</rdfs:comment>
         <rdfs:comment xml:lang="ru">Исследовательская группа, лаборатория, кафедра и пр.</rdfs:comment>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#isst -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#isst">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#ResearchGroup"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#semantic_cms -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#semantic_cms">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Project"/>
+        <laboratory rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#isst"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
