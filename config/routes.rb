@@ -23,4 +23,8 @@ Rails.application.routes.draw do
 
   mount MongodbLogger::Server.new, at: '/mongodb', as: :mongodb
   mount MongodbLogger::Assets.instance, at: '/mongodb/assets', as: :mongodb_assets
+
+  # debug cube
+  get '/admin/cube/project' => 'admin#project'
+  # end cube
 end

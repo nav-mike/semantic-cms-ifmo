@@ -5,4 +5,7 @@ class AdminController < AuthenticateController
 
   def index
   end
+
+  def project
+  end
 end

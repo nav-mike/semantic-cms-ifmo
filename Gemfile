@@ -81,6 +81,7 @@ end
 
 # RDF
 gem 'activerdf'
+gem 'activerdf_sparql'
 
 # tasks - cron
 gem 'whenever'
