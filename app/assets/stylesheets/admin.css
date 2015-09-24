@@ -8,6 +8,15 @@ span.badge.badge-publication {
   background-color: #F0AD4E;
 }
 
+a.person, a.person:hover {
+  color: black;
+}
+
+a.title, a.title:hover {
+  color: #777;
+  cursor: pointer;
+}
+
 /*body{padding-top:30px;}*/
 
 /*.glyphicon {  margin-bottom: 10px;margin-right: 10px;}

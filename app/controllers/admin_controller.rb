@@ -8,4 +8,7 @@ class AdminController < AuthenticateController
 
   def project
   end
+
+  def person
+  end
 end
