@@ -7,7 +7,7 @@
 
 .panel.panel-default
   .panel-body style='text-align: justify;'
-    img src="#{Faker::Avatar.image}" width='75' height='75' style='float: left; margin-right: 20px; margin-bottom: 10px;'
+    img.avatar src="#{Faker::Avatar.image}" width='75' height='75'
     a.btn.btn-social-bootstrap.btn-social-icon.btn-twitter title='twitter'
       i.fa.fa-twitter
     a.btn.btn-social-bootstrap.btn-social-icon.btn-github title='github'
@@ -17,7 +17,8 @@
     a.btn.btn-social-bootstrap.btn-social-icon.btn-website title='project website'
       i.fa.fa-globe
     span
-      strong #{Faker::Company.name},
+      strong
+        a.person href="/admin/cube/department" #{Faker::Company.name},
       |  #{2.years.ago.year}
       |  -
       |  #{1.years.from_now.year}

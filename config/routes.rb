@@ -27,5 +27,6 @@ Rails.application.routes.draw do
   # debug cube
   get '/admin/cube/project' => 'admin#project'
   get '/admin/cube/person' => 'admin#person'
+  get '/admin/cube/department' => 'admin#department'
   # end cube
 end
