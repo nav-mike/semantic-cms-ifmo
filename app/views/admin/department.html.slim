@@ -38,7 +38,7 @@
     h3.panel-title Scientific tags
   .panel-body
     - 22.times.each do
-      a.btn.btn-science-tag class= %w(btn-info btn-success btn-warning btn-danger).sample
+      a.btn.btn-science-tag href='/admin/cube/search' class= %w(btn-info btn-success btn-warning btn-danger).sample
         = Faker::Lorem.word
 
 .panel.panel-default

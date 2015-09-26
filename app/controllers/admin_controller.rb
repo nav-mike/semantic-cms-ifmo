@@ -14,4 +14,7 @@ class AdminController < AuthenticateController
 
   def department
   end
+
+  def search
+  end
 end

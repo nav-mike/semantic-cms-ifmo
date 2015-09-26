@@ -28,5 +28,6 @@ Rails.application.routes.draw do
   get '/admin/cube/project' => 'admin#project'
   get '/admin/cube/person' => 'admin#person'
   get '/admin/cube/department' => 'admin#department'
+  get '/admin/cube/search' => 'admin#search'
   # end cube
 end
