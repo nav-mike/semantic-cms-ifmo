@@ -83,6 +83,8 @@ end
 gem 'activerdf'
 gem 'activerdf_sparql'
 
+gem 'faker'
+
 # tasks - cron
 gem 'whenever'
 
@@ -101,7 +103,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl'
   gem 'database_cleaner'
-  gem 'faker'
+  # gem 'faker'
   gem 'capybara'
   gem 'simplecov', require: false, group: :test
   gem 'capybara-screenshot', group: :test
