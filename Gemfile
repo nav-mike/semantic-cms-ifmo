@@ -80,8 +80,7 @@ group :development do
 end
 
 # RDF
-gem 'activerdf'
-gem 'activerdf_sparql'
+gem 'sparql-client', '~> 1.1.6' # https://github.com/ruby-rdf/sparql-client
 
 gem 'faker'
 
