@@ -7,6 +7,9 @@
 
 h1 Pages
 
+p
+  | owl value:
+  == @solution[:html].value
 / == grid(@pages_grid, show_filters: :no) do |g|
 /   - g.column name: 'URI' do |page|
 /     = '-'

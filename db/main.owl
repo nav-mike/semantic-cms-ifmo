@@ -442,6 +442,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#hello_world -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#hello_world">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Page"/>
+        <html>&lt;h1&gt;Hello World!&lt;/h1&gt;</html>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#isst -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#isst">

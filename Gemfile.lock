@@ -117,6 +117,7 @@ GEM
       activesupport (>= 3.0.0)
     faker (1.4.3)
       i18n (~> 0.5)
+    ffi (1.9.10)
     font-awesome-rails (4.4.0.0)
       railties (>= 3.2, < 5.0)
     font-awesome-sass (4.4.0)
@@ -203,6 +204,9 @@ GEM
     rake (10.4.2)
     rdf (1.1.17.1)
       link_header (~> 0.0, >= 0.0.8)
+    rdf-raptor (1.2.1)
+      ffi (>= 1.9.3)
+      rdf (>= 1.1.0)
     rdoc (4.2.0)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
@@ -347,6 +351,7 @@ DEPENDENCIES
   mysql2
   puma
   rails (= 4.2.1)
+  rdf-raptor
   rolify
   rspec
   rspec-rails (~> 3.0)
