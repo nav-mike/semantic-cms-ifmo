@@ -1,26 +1,10 @@
 # Public pages controller class
 # @author M. Navrotskiy m.navrotskiy@gmail.com
 class PagesController < ApplicationController
-  layout 'public', only: %i(index abit student graduate history staff contacts)
+  # layout 'public', only: %i(index abit student graduate history staff contacts)
+  layout 'admin', only: :index
 
   def index
-  end
-
-  def abit
-  end
-
-  def student
-  end
-
-  def graduate
-  end
-
-  def history
-  end
-
-  def staff
-  end
-
-  def contacts
+    # @pages_grid = initialize_grid(Page)
   end
 end

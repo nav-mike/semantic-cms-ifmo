@@ -6,14 +6,20 @@ Rails.application.routes.draw do
   # settings
   resources :settings, except: :show
 
+  # pages
+  scope '/admin' do
+    resources :pages, except: :show
+  end
+  resources :pages, only: :show
+
   # public pages
-  get 'pages/index'
-  get 'pages/abit'
-  get 'pages/student'
-  get 'pages/graduate'
-  get 'pages/history'
-  get 'pages/staff'
-  get 'pages/contacts'
+  # get 'pages/index'
+  # get 'pages/abit'
+  # get 'pages/student'
+  # get 'pages/graduate'
+  # get 'pages/history'
+  # get 'pages/staff'
+  # get 'pages/contacts'
   # /public pages
 
   get 'admin/index'
