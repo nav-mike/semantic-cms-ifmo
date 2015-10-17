@@ -229,6 +229,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#html -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#html"/>
+    
+
+
     <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#impact_story -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#impact_story">
@@ -377,6 +383,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Page -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Page"/>
     
 
 
