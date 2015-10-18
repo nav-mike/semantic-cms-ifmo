@@ -82,6 +82,7 @@ end
 # RDF
 gem 'sparql-client', '~> 1.1.6' # https://github.com/ruby-rdf/sparql-client
 gem 'rdf-raptor'
+gem 'sparql', '~> 1.1.9'
 
 gem 'faker'
 

@@ -21,7 +21,7 @@ table.table-striped.table-bordered.table
       tr
         td= page.name
         td= page.path
-        td= page.short_content
+        td title='#{page.html}' = page.short_content
         td= page.uri
         td
           = link_to edit_page_path(page), title: 'Edit page', class: 'btn btn-warning btn-xs' do
