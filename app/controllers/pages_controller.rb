@@ -3,10 +3,22 @@ require 'rdf/ntriples'
 # Public pages controller class
 # @author M. Navrotskiy m.navrotskiy@gmail.com
 class PagesController < ApplicationController
-  # layout 'public', only: %i(index abit student graduate history staff contacts)
   layout 'admin', only: :index
 
   def index
     @pages = Page.all
+  end
+
+  def show
+    if params[:id].blank? && params[:page].present?
+      @page = Page.by_path params[:page]
+    elsif params[:id].present?
+      @page = Page.find params[:id]
+    else
+      fail '404'
+    end
+    render 'show', layout: 'public'
+  rescue
+    render file: "#{Rails.root}/public/404", layout: false, status: :not_found
   end
 end

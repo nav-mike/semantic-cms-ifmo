@@ -309,6 +309,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#page_title -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#page_title"/>
+    
+
+
     <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#photo -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#photo"/>
@@ -453,6 +459,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#hello_world">
         <rdf:type rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Page"/>
         <html>&lt;h1&gt;Hello World!&lt;/h1&gt;</html>
+        <page_title>Hello World</page_title>
         <page_path>/hello_world</page_path>
     </owl:NamedIndividual>
     
@@ -470,6 +477,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#lorem">
         <rdf:type rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Page"/>
+        <page_title>Lore Ipsum Text</page_title>
         <page_path>/lorem</page_path>
         <html>&lt;p&gt;
 Sed vel lectus eleifend, viverra tellus quis, aliquam nulla. Suspendisse sagittis arcu at erat maximus, id auctor leo viverra. Vivamus vitae sapien tempus, pretium urna sit amet, aliquet magna. Nam eget vulputate lectus. Cras tempor mollis lacus, nec hendrerit ligula gravida ut. Fusce suscipit ultricies libero sit amet ultrices. Phasellus sollicitudin lacus vitae viverra facilisis. Aliquam id tortor eget nulla consequat sollicitudin vel et erat. Donec at quam sit amet nibh vehicula iaculis in ut diam. Aliquam nec risus id diam egestas accumsan. 

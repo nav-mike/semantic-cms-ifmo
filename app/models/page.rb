@@ -4,6 +4,25 @@ require 'sparql'
 # Model of pages from owl.
 # @author M. Navrotskiy m.navrotskiy@gmail.com
 class Page < ActiveRecord::Base
+  def self.by_path(path)
+    query = "/#{path}"
+    graph ||= RDF::Repository.load("#{Rails.root}/db/main.owl")
+    sse = SPARQL.parse("PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                        PREFIX owl: <http://www.w3.org/2002/07/owl#>
+                        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+                        PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                        PREFIX my_ont: <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#>
+                        SELECT distinct * WHERE {
+                          ?page rdf:type my_ont:Page.
+                          ?page my_ont:html ?html.
+                          ?page my_ont:page_title ?title.
+                          ?page my_ont:page_path ?path
+                          FILTER (str(?path) = \"#{query}\")
+                        }")
+    result = graph.query(sse).first
+    OpenStruct.new html: result[:html].value, title: result[:title].value
+  end
+
   def name
     load_instance if @name.blank?
     @name = "#{@result[:page].to_s.gsub(/^.*\#/, '')}"
@@ -28,6 +47,12 @@ class Page < ActiveRecord::Base
     @html
   end
 
+  def title
+    load_instance if @title.blank?
+    @title = @result[:title].value
+    @title
+  end
+
   private
 
   def load_instance
@@ -40,6 +65,7 @@ class Page < ActiveRecord::Base
                         SELECT distinct * WHERE {
                           ?page rdf:type my_ont:Page.
                           ?page my_ont:html ?html.
+                          ?page my_ont:page_title ?title.
                           ?page my_ont:page_path ?path
                           FILTER (?page = <#{uri}>)
                         }")

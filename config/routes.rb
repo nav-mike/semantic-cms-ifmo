@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   get 'admin/index'
   get 'admin' => 'admin#index'
 
-  root 'pages#index'
+  root 'pages#show'
 
   mount MongodbLogger::Server.new, at: '/mongodb', as: :mongodb
   mount MongodbLogger::Assets.instance, at: '/mongodb/assets', as: :mongodb_assets
@@ -36,4 +36,6 @@ Rails.application.routes.draw do
   get '/admin/cube/department' => 'admin#department'
   get '/admin/cube/search' => 'admin#search'
   # end cube
+
+  get '*page', to: 'pages#show'
 end

@@ -20,7 +20,9 @@ table.table-striped.table-bordered.table
     - @pages.each do |page|
       tr
         td= page.name
-        td= page.path
+        td
+          a href='#{page.path}'
+            = page.path
         td title='#{page.html}' = page.short_content
         td= page.uri
         td
