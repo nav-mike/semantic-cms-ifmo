@@ -3,7 +3,7 @@ require 'rdf/ntriples'
 # Public pages controller class
 # @author M. Navrotskiy m.navrotskiy@gmail.com
 class PagesController < ApplicationController
-  layout 'admin', only: :index
+  layout 'admin', only: %i(index new)
 
   def index
     @pages = Page.all
@@ -20,5 +20,9 @@ class PagesController < ApplicationController
     render 'show', layout: 'public'
   rescue
     render file: "#{Rails.root}/public/404", layout: false, status: :not_found
+  end
+
+  def new
+    @page = Page.new
   end
 end

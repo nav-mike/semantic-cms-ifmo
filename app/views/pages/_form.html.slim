@@ -1,0 +1,21 @@
+= simple_form_for @page do |f|
+
+  .form-group
+    label.control-label for='page_name' Name
+    input.form-control#page_name type='text' name='page[name]' placeholder='e.g. HelloWorld'
+
+  .form-group
+    label.control-label for='page_path' Path (URL)
+    input.form-control#page_path type='text' name='page[path]' placeholder='/hello_world'
+
+  .form-group
+    label.control-label for='page_title' Title
+    input.form-control#page_path type='text' name='page[title]' placeholder='Hello World'
+
+  .form-group
+    label.control-label for='page_html' Content
+    textarea.form-control#page_html name='page[html]' placeholder='<h1>Hello World</h1>'
+
+  .form-group
+    .col-sm-offset-3.col-sm-9
+      = f.button :submit
