@@ -24,30 +24,35 @@ class Page < ActiveRecord::Base
   end
 
   def name
+    return '' if id.blank?
     load_instance if @name.blank?
     @name = "#{@result[:page].to_s.gsub(/^.*\#/, '')}"
     @name
   end
 
   def path
+    return '' if id.blank?
     load_instance if @path.blank?
     @path = @result[:path].value
     @path
   end
 
   def short_content
+    return '' if id.blank?
     load_instance if @short_content.blank?
     @short_content = @result[:html].value.gsub(/(.{10}).+/, '\1...')
     @short_content
   end
 
   def html
+    return '' if id.blank?
     load_instance if @html.blank?
     @html = @result[:html].value
     @html
   end
 
   def title
+    return '' if id.blank?
     load_instance if @title.blank?
     @title = @result[:title].value
     @title

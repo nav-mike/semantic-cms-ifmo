@@ -3,7 +3,7 @@ require 'rdf/ntriples'
 # Public pages controller class
 # @author M. Navrotskiy m.navrotskiy@gmail.com
 class PagesController < ApplicationController
-  layout 'admin', only: %i(index new)
+  layout 'admin', only: %i(index new edit)
 
   def index
     @pages = Page.all
@@ -24,5 +24,9 @@ class PagesController < ApplicationController
 
   def new
     @page = Page.new
+  end
+
+  def edit
+    @page = Page.find params[:id].to_i
   end
 end

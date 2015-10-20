@@ -2,19 +2,20 @@
 
   .form-group
     label.control-label for='page_name' Name
-    input.form-control#page_name type='text' name='page[name]' placeholder='e.g. HelloWorld'
+    input.form-control#page_name type='text' name='page[name]' placeholder='e.g. HelloWorld' value='#{@page.name}'
 
   .form-group
     label.control-label for='page_path' Path (URL)
-    input.form-control#page_path type='text' name='page[path]' placeholder='/hello_world'
+    input.form-control#page_path type='text' name='page[path]' placeholder='/hello_world' value='#{@page.path}'
 
   .form-group
     label.control-label for='page_title' Title
-    input.form-control#page_path type='text' name='page[title]' placeholder='Hello World'
+    input.form-control#page_path type='text' name='page[title]' placeholder='Hello World' value='#{@page.title}'
 
   .form-group
     label.control-label for='page_html' Content
-    textarea.form-control#page_html name='page[html]' placeholder='<h1>Hello World</h1>'
+    textarea.form-control#page_html name='page[html]' placeholder='<h1>Hello World</h1>' rows='10'
+      = @page.html
 
   .form-group
     .col-sm-offset-3.col-sm-9
