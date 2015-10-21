@@ -4,9 +4,18 @@ require 'sparql'
 # Model of pages from owl.
 # @author M. Navrotskiy m.navrotskiy@gmail.com
 class Page < ActiveRecord::Base
+  def delete_full
+    @graph ||= RDF::Repository.load("#{Rails.root}/db/main.owl")
+    page = RDF::URI.new uri
+    @graph.delete [page, nil, nil]
+    File.open("#{Rails.root}/db/main.owl", 'w') { |f| f << @graph.dump(:turtle) }
+
+    destroy
+  end
+
   def self.by_path(path)
     query = "/#{path}"
-    graph ||= RDF::Repository.load("#{Rails.root}/db/main.owl")
+    graph = RDF::Repository.load("#{Rails.root}/db/main.owl")
     sse = SPARQL.parse("PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
                         PREFIX owl: <http://www.w3.org/2002/07/owl#>
                         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>

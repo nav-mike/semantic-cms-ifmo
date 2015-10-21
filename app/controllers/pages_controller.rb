@@ -5,6 +5,8 @@ require 'rdf/ntriples'
 class PagesController < ApplicationController
   layout 'admin', only: %i(index new edit)
 
+  before_action :set_page, only: %i(edit update destroy)
+
   def index
     @pages = Page.all
   end
@@ -27,6 +29,16 @@ class PagesController < ApplicationController
   end
 
   def edit
-    @page = Page.find params[:id].to_i
+  end
+
+  def destroy
+    @page.delete_full
+    redirect_to pages_url, notice: 'Page was successfully destroyed.'
+  end
+
+  private
+
+  def set_page
+    @page = Page.find(params[:id])
   end
 end

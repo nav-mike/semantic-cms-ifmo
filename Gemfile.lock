@@ -212,6 +212,9 @@ GEM
     rdf-raptor (1.2.1)
       ffi (>= 1.9.3)
       rdf (>= 1.1.0)
+    rdf-turtle (1.1.8)
+      ebnf (~> 0.3, >= 0.3.6)
+      rdf (~> 1.1, >= 1.1.10)
     rdf-xsd (1.1.4)
       rdf (~> 1.1, >= 1.1.9)
     rdoc (4.2.0)
@@ -368,6 +371,7 @@ DEPENDENCIES
   puma
   rails (= 4.2.1)
   rdf-raptor
+  rdf-turtle
   rolify
   rspec
   rspec-rails (~> 3.0)

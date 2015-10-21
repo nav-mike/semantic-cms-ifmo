@@ -1,500 +1,477 @@
-<?xml version="1.0"?>
+@prefix : <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo> .
+
+<http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo> rdf:type owl:Ontology .
 
 
-<!DOCTYPE rdf:RDF [
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
 
 
-<rdf:RDF xmlns="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#"
-     xml:base="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo"/>
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#department
+
+:department rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#departments
+
+:departments rdf:type owl:FunctionalProperty ,
+                      owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#laboratories
+
+:laboratories rdf:type owl:FunctionalProperty ,
+                       owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#laboratory
+
+:laboratory rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#leader
+
+:leader rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#partners
+
+:partners rdf:type owl:FunctionalProperty ,
+                   owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#people
+
+:people rdf:type owl:FunctionalProperty ,
+                 owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#projects
+
+:projects rdf:type owl:FunctionalProperty ,
+                   owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#publications
+
+:publications rdf:type owl:FunctionalProperty ,
+                       owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#research_group
+
+:research_group rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#universtity
+
+:universtity rdf:type owl:ObjectProperty .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#about
+
+:about rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#academic_rank
+
+:academic_rank rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#address
+
+:address rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#arxiv
+
+:arxiv rdf:type owl:DatatypeProperty ;
+       
+       rdfs:subPropertyOf :social_network .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#awards
+
+:awards rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#biography
+
+:biography rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#cv_link
+
+:cv_link rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#date
+
+:date rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#description
+
+:description rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#education
+
+:education rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#email
+
+:email rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#end_date
+
+:end_date rdf:type owl:DatatypeProperty ;
+          
+          rdfs:subPropertyOf :date .
+
+
+
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#fb
+
+:fb rdf:type owl:DatatypeProperty ;
     
+    rdfs:subPropertyOf :social_network .
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
 
-    
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#github
 
+:github rdf:type owl:DatatypeProperty ;
+        
+        rdfs:subPropertyOf :social_network .
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#department -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#department"/>
-    
 
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#google_plus
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#departments -->
+:google_plus rdf:type owl:DatatypeProperty ;
+             
+             rdfs:subPropertyOf :social_network .
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#departments">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-    </owl:ObjectProperty>
-    
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#laboratories -->
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#google_scholar
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#laboratories">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-    </owl:ObjectProperty>
-    
+:google_scholar rdf:type owl:DatatypeProperty ;
+                
+                rdfs:subPropertyOf :social_network .
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#laboratory -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#laboratory"/>
-    
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#html
 
+:html rdf:type owl:DatatypeProperty .
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#leader -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#leader"/>
-    
 
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#impact_story
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#partners -->
+:impact_story rdf:type owl:DatatypeProperty ;
+              
+              rdfs:subPropertyOf :social_network .
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#partners">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-    </owl:ObjectProperty>
-    
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#people -->
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#is_active
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#people">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-    </owl:ObjectProperty>
-    
+:is_active rdf:type owl:DatatypeProperty .
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#projects -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#projects">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-    </owl:ObjectProperty>
-    
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#keywords
 
+:keywords rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty .
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#publications -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#publications">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-    </owl:ObjectProperty>
-    
 
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#label
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#research_group -->
+:label rdf:type owl:DatatypeProperty ;
+       
+       rdfs:subPropertyOf :name .
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#research_group"/>
-    
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#universtity -->
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#link
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#universtity"/>
-    
+:link rdf:type owl:DatatypeProperty ;
+      
+      rdfs:subPropertyOf :social_network .
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
 
-    
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#linkedin
 
+:linkedin rdf:type owl:DatatypeProperty ;
+          
+          rdfs:subPropertyOf :social_network .
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#about -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#about"/>
-    
 
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#logo
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#academic_rank -->
+:logo rdf:type owl:DatatypeProperty .
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#academic_rank"/>
-    
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#address -->
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#name
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#address"/>
-    
+:name rdf:type owl:DatatypeProperty ;
+      
+      rdfs:subPropertyOf owl:topDataProperty .
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#arxiv -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#arxiv">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#social_network"/>
-    </owl:DatatypeProperty>
-    
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#orcid
 
+:orcid rdf:type owl:DatatypeProperty ;
+       
+       rdfs:subPropertyOf :social_network .
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#awards -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#awards">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-    </owl:DatatypeProperty>
-    
 
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#page_path
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#biography -->
+:page_path rdf:type owl:DatatypeProperty .
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#biography"/>
-    
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#cv_link -->
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#page_title
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#cv_link"/>
-    
+:page_title rdf:type owl:DatatypeProperty .
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#date -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#date"/>
-    
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#photo
 
+:photo rdf:type owl:DatatypeProperty .
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#description -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#description"/>
-    
 
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#publication_string
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#education -->
+:publication_string rdf:type owl:DatatypeProperty .
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#education"/>
-    
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#email -->
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#research_tags
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#email"/>
-    
+:research_tags rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty .
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#end_date -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#end_date">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#date"/>
-    </owl:DatatypeProperty>
-    
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#room
 
+:room rdf:type owl:DatatypeProperty .
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#fb -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#fb">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#social_network"/>
-    </owl:DatatypeProperty>
-    
 
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#scopus
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#github -->
+:scopus rdf:type owl:DatatypeProperty ;
+        
+        rdfs:subPropertyOf :social_network .
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#github">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#social_network"/>
-    </owl:DatatypeProperty>
-    
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#google_plus -->
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#social_network
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#google_plus">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#social_network"/>
-    </owl:DatatypeProperty>
-    
+:social_network rdf:type owl:DatatypeProperty .
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#google_scholar -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#google_scholar">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#social_network"/>
-    </owl:DatatypeProperty>
-    
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#start_date
 
+:start_date rdf:type owl:DatatypeProperty ;
+            
+            rdfs:subPropertyOf :date .
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#html -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#html"/>
-    
 
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#title
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#impact_story -->
+:title rdf:type owl:DatatypeProperty ;
+       
+       rdfs:subPropertyOf :name .
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#impact_story">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#social_network"/>
-    </owl:DatatypeProperty>
-    
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#is_active -->
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#twitter
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#is_active"/>
-    
+:twitter rdf:type owl:DatatypeProperty ;
+         
+         rdfs:subPropertyOf :social_network .
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#keywords -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#keywords">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-    </owl:DatatypeProperty>
-    
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#website
 
+:website rdf:type owl:DatatypeProperty ;
+         
+         rdfs:subPropertyOf :social_network .
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#label -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#label">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#name"/>
-    </owl:DatatypeProperty>
-    
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#link -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#link">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#social_network"/>
-    </owl:DatatypeProperty>
-    
+#################################################################
+#
+#    Classes
+#
+#################################################################
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#linkedin -->
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Page
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#linkedin">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#social_network"/>
-    </owl:DatatypeProperty>
-    
+:Page rdf:type owl:Class .
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#logo -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#logo"/>
-    
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Person
 
+:Person rdf:type owl:Class ;
+        
+        rdfs:label "Person"@en ,
+                   "Человек"@ru ;
+        
+        rdfs:comment "The person is a student, graduate, teacher, researcher, etc."@en ,
+                     "Человек - студент, аспирант, преподаватель, научный сотрудник и пр."@ru .
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#name -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#name">
-        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
-    </owl:DatatypeProperty>
-    
 
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Project
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#orcid -->
+:Project rdf:type owl:Class ;
+         
+         rdfs:label "Project"@en ,
+                    "Проект"@ru ;
+         
+         rdfs:comment "Class of scientific project"@en ,
+                      "Класс научного проекта."@ru .
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#orcid">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#social_network"/>
-    </owl:DatatypeProperty>
-    
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#page_path -->
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Publication
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#page_path"/>
-    
+:Publication rdf:type owl:Class .
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#page_title -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#page_title"/>
-    
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#ResearchGroup
 
+:ResearchGroup rdf:type owl:Class ;
+               
+               rdfs:label "Research group"@en ,
+                          "Исследовательская группа"@ru ;
+               
+               rdfs:comment "Research group (laboratory, department)."@en ,
+                            "Исследовательская группа, лаборатория, кафедра и пр."@ru .
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#photo -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#photo"/>
-    
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#publication_string -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#publication_string"/>
-    
+#################################################################
+#
+#    Individuals
+#
+#################################################################
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#research_tags -->
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#hello_world
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#research_tags">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-    </owl:DatatypeProperty>
-    
+:hello_world rdf:type :Page ,
+                      owl:NamedIndividual ;
+             
+             :html "<h1>Hello World!</h1>" ;
+             
+             :page_title "Hello World" ;
+             
+             :page_path "/hello_world" .
 
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#room -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#room"/>
-    
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#isst
 
+:isst rdf:type :ResearchGroup ,
+               owl:NamedIndividual .
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#scopus -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#scopus">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#social_network"/>
-    </owl:DatatypeProperty>
-    
 
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#lorem
 
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#social_network -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#social_network"/>
-    
-
-
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#start_date -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#start_date">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#date"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#title -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#title">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#name"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#twitter -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#twitter">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#social_network"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#website -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#website">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#social_network"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Page -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Page"/>
-    
-
-
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Person -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Person">
-        <rdfs:label xml:lang="en">Person</rdfs:label>
-        <rdfs:label xml:lang="ru">Человек</rdfs:label>
-        <rdfs:comment xml:lang="en">The person is a student, graduate, teacher, researcher, etc.</rdfs:comment>
-        <rdfs:comment xml:lang="ru">Человек - студент, аспирант, преподаватель, научный сотрудник и пр.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Project -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Project">
-        <rdfs:label xml:lang="en">Project</rdfs:label>
-        <rdfs:label xml:lang="ru">Проект</rdfs:label>
-        <rdfs:comment xml:lang="en">Class of scientific project</rdfs:comment>
-        <rdfs:comment xml:lang="ru">Класс научного проекта.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Publication -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Publication"/>
-    
-
-
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#ResearchGroup -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#ResearchGroup">
-        <rdfs:label xml:lang="en">Research group</rdfs:label>
-        <rdfs:label xml:lang="ru">Исследовательская группа</rdfs:label>
-        <rdfs:comment xml:lang="en">Research group (laboratory, department).</rdfs:comment>
-        <rdfs:comment xml:lang="ru">Исследовательская группа, лаборатория, кафедра и пр.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#hello_world -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#hello_world">
-        <rdf:type rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Page"/>
-        <html>&lt;h1&gt;Hello World!&lt;/h1&gt;</html>
-        <page_title>Hello World</page_title>
-        <page_path>/hello_world</page_path>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#isst -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#isst">
-        <rdf:type rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#ResearchGroup"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#lorem -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#lorem">
-        <rdf:type rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Page"/>
-        <page_title>Lore Ipsum Text</page_title>
-        <page_path>/lorem</page_path>
-        <html>&lt;p&gt;
+:lorem rdf:type :Page ,
+                owl:NamedIndividual ;
+       
+       :page_title "Lore Ipsum Text" ;
+       
+       :page_path "/lorem" ;
+       
+       :html """<p>
 Sed vel lectus eleifend, viverra tellus quis, aliquam nulla. Suspendisse sagittis arcu at erat maximus, id auctor leo viverra. Vivamus vitae sapien tempus, pretium urna sit amet, aliquet magna. Nam eget vulputate lectus. Cras tempor mollis lacus, nec hendrerit ligula gravida ut. Fusce suscipit ultricies libero sit amet ultrices. Phasellus sollicitudin lacus vitae viverra facilisis. Aliquam id tortor eget nulla consequat sollicitudin vel et erat. Donec at quam sit amet nibh vehicula iaculis in ut diam. Aliquam nec risus id diam egestas accumsan. 
-&lt;/p&gt;</html>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#semantic_cms -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#semantic_cms">
-        <rdf:type rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Project"/>
-        <laboratory rdf:resource="http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#isst"/>
-    </owl:NamedIndividual>
-</rdf:RDF>
+</p>""" .
 
 
 
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+###  http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#semantic_cms
+
+:semantic_cms rdf:type :Project ,
+                       owl:NamedIndividual ;
+              
+              :laboratory :isst .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
 
