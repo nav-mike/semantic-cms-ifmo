@@ -14,4 +14,8 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require wice_grid
+//= require angular
+//= require angular-rails-templates
+//= require ./angular/semantic_cms_app
+//= require_tree ./angular/templates
 //= require_tree .
