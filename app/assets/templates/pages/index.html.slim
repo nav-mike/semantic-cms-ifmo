@@ -30,5 +30,5 @@ table.table-striped.table-bordered.table
         a.btn.btn-info.btn-xs(ng-href='/pages/{{page.id}}' title='Show on public')
           i.fa.fa-eye.fa-fw
       td
-        a.btn.btn-danger.btn-xs(ng-cick='page.delete()' data-confirm='Are you sure?')
+        a.btn.btn-danger.btn-xs(ng-cick='deletePage(page)' data-confirm='Are you sure?')
           i.fa.fa-times.fa-fw
