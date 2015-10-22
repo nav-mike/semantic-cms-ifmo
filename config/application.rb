@@ -29,5 +29,8 @@ module Workspace
       g.assets false
       g.helper false
     end
+
+    # config.assets.paths << Rails.root.join("lib","assets","bower_components","bootstrap-sass-official", "assets", "stylesheets")
+    # config.assets.paths << Rails.root.join("lib","assets","bower_components","bootstrap-sass-official", "assets","fonts")
   end
 end
