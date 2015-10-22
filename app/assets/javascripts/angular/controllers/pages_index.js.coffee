@@ -3,4 +3,8 @@ angular.module('semanticCMSApp')
     ['$scope', '$location', 'Page',
     ($scope, $location, Page) ->
       $scope.pages = Page.query()
+
+      $scope.deletePage = (page) ->
+        console.dir page
+        return
   ]

@@ -20,6 +20,8 @@
 //= require angular-rails-templates
 //= require angular-resource
 //= require angular-loading-bar
+//= require bootbox
+//= require ngBootbox
 //= require ./angular/semantic_cms_app
 //= require_tree .
 //= require_tree ../templates
