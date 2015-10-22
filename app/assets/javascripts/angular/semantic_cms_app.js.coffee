@@ -1,4 +1,4 @@
-angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.router',])
+angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.router', 'ngResource'])
   .config(['$httpProvider', (provider) ->
     provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
   ])
@@ -9,12 +9,13 @@ angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.route
         requireBase: false
       })
       $stateProvider
-        .state('home', {
-            url: '/admin/pages',
+        .state('pages', {
+            url: '/!admin/pages',
             templateUrl: 'pages/index.html',
             controller: 'PagesIndex'
         })
       $urlRouterProvider.otherwise('/')
+      return
   ])
 
 $(document).on 'ready page:load', (argumanets) ->

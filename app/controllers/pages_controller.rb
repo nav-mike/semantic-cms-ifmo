@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   before_action :set_page, only: %i(edit update destroy)
 
   def index
+    sleep 10.seconds
     @pages = Page.all
   end
 

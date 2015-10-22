@@ -4,3 +4,31 @@
     |  New Page
 
 h1 Pages
+
+table.table-striped.table-bordered.table
+  thead
+    tr
+      th Title
+      th Name
+      th Path
+      th Content
+      th URI
+      th
+      th
+      th
+    tr ng-repeat='page in pages'
+      td() {{page.title}}
+      td() {{page.name}}
+      td
+        a(ng-href='{{page.path}}' target='_self') {{page.path}}
+      td(title='{{page.html}}') {{page.short_content}}
+      td() {{page.uri}}
+      td
+        a.btn.btn-warning.btn-xs(ng-href='/admin/pages/{{page.id}}' title='Edit page')
+          i.fa.fa-pencil.fa-fw
+      td
+        a.btn.btn-info.btn-xs(ng-href='/pages/{{page.id}}' title='Show on public')
+          i.fa.fa-eye.fa-fw
+      td
+        a.btn.btn-danger.btn-xs(ng-cick='page.delete()' data-confirm='Are you sure?')
+          i.fa.fa-times.fa-fw

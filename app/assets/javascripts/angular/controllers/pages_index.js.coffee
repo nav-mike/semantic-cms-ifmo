@@ -1,6 +1,6 @@
 angular.module('semanticCMSApp')
   .controller 'PagesIndex',
-    ['$scope', '$location',
-    ($scope, $location) ->
-      console.log 1234
+    ['$scope', '$location', 'Page',
+    ($scope, $location, Page) ->
+      $scope.pages = Page.query()
   ]
