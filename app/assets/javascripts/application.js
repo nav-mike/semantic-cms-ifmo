@@ -22,6 +22,7 @@
 //= require angular-loading-bar
 //= require bootbox
 //= require ngBootbox
+//= require ng-page-title
 //= require ./angular/semantic_cms_app
 //= require_tree .
 //= require_tree ../templates
