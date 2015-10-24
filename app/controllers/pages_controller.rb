@@ -12,16 +12,11 @@ class PagesController < ApplicationController
   end
 
   def show
-    if params[:id].blank? && params[:page].present?
-      @page = Page.by_path params[:page]
-    elsif params[:id].present?
-      @page = Page.find params[:id]
+    if (params[:id] =~ /^[0-9]+$/).blank?
+      @page = Page.by_path params[:id]
     else
-      fail '404'
+      @page = Page.find params[:id]
     end
-    render 'show', layout: 'public'
-  rescue
-    render file: "#{Rails.root}/public/404", layout: false, status: :not_found
   end
 
   def new

@@ -60,7 +60,7 @@ angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.route
           }
         })
         .state('pages_show', {
-          url: '/pages/:id'
+          url: '/pages/{id:int}'
           views: {
             'layout': {
               templateUrl: 'layouts/public/layout.html'
@@ -72,6 +72,22 @@ angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.route
           }
           data: {
             pageType: 'public'
+            pagePath: 'id'
+          }
+        })
+        .state('pages_show_custom', {
+          url: '/{path:[a-zA-Z0-9\-_\/]+}'
+          views: {
+            'layout': {
+              templateUrl: 'layouts/public/layout.html'
+              controller: 'PagesShow'
+            }
+            'content@pages_show_custom': {
+              templateUrl: 'pages/show.html'
+            }
+          }
+          data: {
+            pagePath: 'path'
           }
         })
       $urlRouterProvider.otherwise('/')

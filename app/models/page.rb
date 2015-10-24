@@ -10,7 +10,7 @@ class Page < ActiveRecord::Base
   end
 
   def self.by_path(path)
-    query = "/#{path}"
+    query = path
     graph = RDF::Repository.load("#{Rails.root}/db/main.owl")
     sse = SPARQL.parse("PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
                         PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -25,7 +25,7 @@ class Page < ActiveRecord::Base
                           FILTER (str(?path) = \"#{query}\")
                         }")
     result = graph.query(sse).first
-    OpenStruct.new html: result[:html].value, title: result[:title].value
+    Page.find_by uri: result[:page].to_s
   end
 
   def name
