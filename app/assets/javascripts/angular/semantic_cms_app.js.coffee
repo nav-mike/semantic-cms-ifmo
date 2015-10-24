@@ -16,7 +16,7 @@ angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.route
             templateUrl: 'pages/index.html'
             controller: 'PagesIndex'
             data: {
-              pageTitle: 'Pages | Semantic CMS Admin pages'
+              pageTitle: 'Pages'
             }
         })
         .state('pages_new', {
@@ -24,7 +24,7 @@ angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.route
           templateUrl: 'pages/new.html'
           controller: 'PagesNew'
           data: {
-            pageTitle: 'New Page | Semantic CMS Admin pages'
+            pageTitle: 'New Page'
           }
         })
         .state('pages_edit', {
@@ -32,13 +32,20 @@ angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.route
           templateUrl: 'pages/edit.html'
           controller: 'PagesEdit'
           data: {
-            pageTitle: 'Edit Page | Semantic CMS Admin pages'
+            pageTitle: 'Edit Page'
           }
         })
         .state('pages_show', {
           url: '/pages/:id'
-          templateUrl: 'pages/show.html'
-          controller: 'PagesShow'
+          views: {
+            '@': {
+              templateUrl: 'layouts/public/layout.html'
+              controller: 'PagesShow'
+            }
+            'content@pages_show': {
+              templateUrl: 'pages/show.html'
+            }
+          }
         })
       $urlRouterProvider.otherwise('/')
       return

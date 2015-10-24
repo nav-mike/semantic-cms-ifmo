@@ -9,7 +9,7 @@ class LayoutsController < AdminController
     if params[:layout] == :null
       false
     else
-      'admin'
+      'global'
     end
   end
 end

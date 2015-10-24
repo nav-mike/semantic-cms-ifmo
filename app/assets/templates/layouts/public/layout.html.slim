@@ -1,0 +1,46 @@
+.container-fluid#header
+    a href='http://ifmo.ru'
+      | #{Setting.university_title}
+
+.container
+
+  .page-header style='margin-top: 0px;'
+    h2
+      a href='/pages/index' title='Кафедра информатики и прикладной математики' rel='home'
+        | #{Setting.department_title}
+        img style='float: right; margin-top: -10px;' src='http://ipm.ifmo.ru/wp-content/themes/ipm/rus_logo.png'
+
+  .navbar.navbar-default.navbar-static-top role='navigation'
+    .container
+      .navbar-header
+        button.navbar-toggle type='button' data-toggle='collapse' data-target='.navbar-collapse'
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+
+      .navbar-collapse.collapse
+        ul.nav.navbar-nav
+          li.menu-item.menu-item-type-custom.menu-item-object-custom.current-menu-item.current_page_item.menu-item-home.menu-item-24.current-menu-item#menu-item-40
+            a href='/pages/index' Главная
+          li.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-40#menu-item-40
+            a href='/pages/abit' Абитуриенту
+          li.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-83#menu-item-83
+            a href='/pages/student' Студенту
+          li.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-126#menu-item-126
+            a href='/pages/graduate' Выпускнику
+          li.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-34#menu-item-34
+            a href='/pages/history' История
+          li.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-36#menu-item-36
+            a href='/pages/staff' Сотрудники
+          li.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-29#menu-item-29
+            a href='/pages/contacts' Контакты
+          li.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-37#menu-item-37
+            a href='http://abit.ifmo.ru' target='_blank' Сайт &#171;Абитуриент ИТМО&#187;
+
+  div ui-view='content'
+
+  hr
+
+#footer
+   .container кафедра информатики и прикладной математики
