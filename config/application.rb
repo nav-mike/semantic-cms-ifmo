@@ -31,6 +31,5 @@ module Workspace
     end
 
     config.assets.paths << Rails.root.join("lib","assets","bower_components","angular-loading-bar", "build")
-    config.assets.paths << Rails.root.join("lib","assets","bower_components","angular-bootstrap-colorpicker", "css")
   end
 end

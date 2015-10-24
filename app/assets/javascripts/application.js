@@ -24,8 +24,8 @@
 //= require ngBootbox
 //= require ng-page-title
 //= require angular-sanitize
-//= require angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module
-//= require angular-wysiwyg
+//= require ckeditor/init
+//= require angular-ckeditor
 //= require ./angular/semantic_cms_app
 //= require_tree .
 //= require_tree ../templates

@@ -63,11 +63,10 @@ gem 'bootstrap-generators', group: :development
 gem 'wice_grid', '3.6.0.pre4'
 gem 'font-awesome-sass', '~> 4.3'
 
-# angular
-# gem 'angularjs-rails'
+# ui
 gem 'bower-rails'
 gem 'angular-rails-templates'
-# gem 'angular-ui-router-rails'
+gem 'ckeditor'
 
 # chart (visualize publication activity)
 gem 'chartkick'
