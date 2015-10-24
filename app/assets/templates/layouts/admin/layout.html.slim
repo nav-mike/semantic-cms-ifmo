@@ -29,6 +29,28 @@
     .col-sm-3
       /! left
       / = render 'layouts/admins/toolbox'
+      h3
+        i.glyphicon.glyphicon-briefcase
+        |  Toolbox
+      hr
+
+      ul.nav.nav-stacked
+        li
+          a href='/!admin/pages'
+            i.glyphicon.glyphicon-file
+            |  Pages
+        li
+          a href='#users_path'
+            i.glyphicon.glyphicon-user
+            |  Users
+        li
+          a href='#settings_path'
+            i.glyphicon.glyphicon-cog
+            |  Settings
+        li
+          a href='/admin/cube/project'
+            i.glyphicon.glyphicon-th
+            |  Data cube
 
       hr
     /! /span-3
