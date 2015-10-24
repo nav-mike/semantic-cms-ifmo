@@ -28,16 +28,30 @@ angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.route
         })
         .state('pages_new', {
           url: '/!admin/pages/new'
-          templateUrl: 'pages/new.html'
-          controller: 'PagesNew'
+          views: {
+            'layout': {
+              templateUrl: 'layouts/admin/layout.html'
+              controller: 'PagesNew'
+            }
+            'content@pages_new': {
+              templateUrl: 'pages/new.html'
+            }
+          }
           data: {
             pageTitle: 'New Page'
           }
         })
         .state('pages_edit', {
           url: '/!admin/pages/edit/:id',
-          templateUrl: 'pages/edit.html'
-          controller: 'PagesEdit'
+          views: {
+            'layout': {
+              templateUrl: 'layouts/admin/layout.html'
+              controller: 'PagesEdit'
+            }
+            'content@pages_edit': {
+              templateUrl: 'pages/edit.html'
+            }
+          }
           data: {
             pageTitle: 'Edit Page'
           }
