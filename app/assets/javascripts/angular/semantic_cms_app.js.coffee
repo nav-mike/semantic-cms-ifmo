@@ -24,6 +24,14 @@ angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.route
             pageTitle: 'New Page | Semantic CMS Admin pages'
           }
         })
+        .state('pages_edit', {
+          url: '/!admin/pages/edit/:id',
+          templateUrl: 'pages/edit.html'
+          controller: 'PagesEdit'
+          data: {
+            pageTitle: 'Edit Page | Semantic CMS Admin pages'
+          }
+        })
       $urlRouterProvider.otherwise('/')
       return
   ])

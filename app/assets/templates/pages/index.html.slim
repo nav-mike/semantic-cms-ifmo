@@ -24,7 +24,7 @@ table.table-striped.table-bordered.table
       td(title='{{page.html}}') {{page.short_content}}
       td() {{page.uri}}
       td
-        a.btn.btn-warning.btn-xs(ng-href='/admin/pages/{{page.id}}' title='Edit page')
+        a.btn.btn-warning.btn-xs(ng-href='/!admin/pages/edit/{{page.id}}' title='Edit page')
           i.fa.fa-pencil.fa-fw
       td
         a.btn.btn-info.btn-xs(ng-href='/pages/{{page.id}}' title='Show on public')
