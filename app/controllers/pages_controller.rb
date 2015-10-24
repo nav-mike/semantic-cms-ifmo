@@ -5,7 +5,7 @@ require 'rdf/ntriples'
 class PagesController < ApplicationController
   layout 'admin', only: %i(index new edit)
 
-  before_action :set_page, only: %i(edit update destroy)
+  before_action :set_page, only: %i(update destroy)
 
   def index
     @pages = Page.all
@@ -34,6 +34,15 @@ class PagesController < ApplicationController
   def create
     @page = Page.new()
     @page.create_rdf pages_params
+    render json: true, status: :ok
+  rescue => e
+    logger.error e.message
+    logger.error e.backtrace.join("\n")
+    render json: {message: e.message}, status: :interval_server_error
+  end
+
+  def update
+    @page.update_rdf pages_params
     render json: true, status: :ok
   rescue => e
     logger.error e.message

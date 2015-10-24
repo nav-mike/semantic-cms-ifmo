@@ -5,11 +5,7 @@ require 'sparql'
 # @author M. Navrotskiy m.navrotskiy@gmail.com
 class Page < ActiveRecord::Base
   def delete_full
-    @graph ||= RDF::Repository.load("#{Rails.root}/db/main.owl")
-    page = RDF::URI.new uri
-    @graph.delete [page, nil, nil]
-    File.open("#{Rails.root}/db/main.owl", 'w') { |f| f << @graph.dump(:turtle) }
-
+    drop_rdf
     destroy
   end
 
@@ -68,6 +64,28 @@ class Page < ActiveRecord::Base
   end
 
   def create_rdf(options)
+    insert_rdf(options)
+
+    Page.create! uri: "http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo##{options[:name]}"
+  end
+
+  def update_rdf(options)
+    drop_rdf
+    insert_rdf options
+    self.uri = "http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo##{options[:name]}"
+    save
+  end
+
+  private
+
+  def drop_rdf
+    @graph ||= RDF::Repository.load("#{Rails.root}/db/main.owl")
+    page = RDF::URI.new uri
+    @graph.delete [page, nil, nil]
+    File.open("#{Rails.root}/db/main.owl", 'w') { |f| f << @graph.dump(:turtle) }
+  end
+
+  def insert_rdf(options)
     @graph ||= RDF::Repository.load("#{Rails.root}/db/main.owl")
     page = RDF::URI.new "http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo##{options[:name]}"
     base = RDF::URI.new 'http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Page'
@@ -81,11 +99,7 @@ class Page < ActiveRecord::Base
     @graph << [page, path, options[:path]]
     @graph << [page, title, options[:title]]
     File.open("#{Rails.root}/db/main.owl", 'w') { |f| f << @graph.dump(:turtle) }
-
-    Page.create! uri: "http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo##{options[:name]}"
   end
-
-  private
 
   def load_instance
     @graph ||= RDF::Repository.load("#{Rails.root}/db/main.owl")
