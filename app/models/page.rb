@@ -53,8 +53,13 @@ class Page < ActiveRecord::Base
     projects = Project.all
     return '' if id.blank?
     load_instance if @html.blank?
-    @html = @result[:html].value
-    @html
+    temp = "<ul>
+              <% for item in projects %>
+	             <li><%= item.uri %></li>
+              <% end %>
+            </ul>"
+    pb = PageErb.new({projects: projects})
+    @html = pb.render(temp)
   end
 
   def title

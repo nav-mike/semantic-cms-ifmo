@@ -16,6 +16,17 @@
     <http://www.w3.org/2000/01/rdf-schema#comment> "Class of scientific project"@en, "Класс научного проекта."@ru ;
     <http://www.w3.org/2000/01/rdf-schema#label> "Project"@en, "Проект"@ru .
 
+<http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Projects>
+    <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#html> """<ul>
+  <% for item in projects %>
+    
+  <% end %>
+</ul>
+""" ;
+    <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#page_path> "/ipm/projects" ;
+    <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#page_title> "Projects" ;
+    a <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Page>, <http://www.w3.org/2002/07/owl#NamedIndividual> .
+
 <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Publication>
     a <http://www.w3.org/2002/07/owl#Class> .
 
