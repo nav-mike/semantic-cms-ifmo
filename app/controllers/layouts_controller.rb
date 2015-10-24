@@ -6,8 +6,10 @@ class LayoutsController < AdminController
   end
 
   def layout_name
-    if params[:layout] == 0
+    if params[:layout] == :null
       false
+    elsif params[:layout] == :public
+      'application'
     else
       'admin'
     end

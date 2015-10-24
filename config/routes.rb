@@ -9,8 +9,9 @@ Rails.application.routes.draw do
     resources :pages
   end
 
-  get '*path.html' => 'layouts#index', :layout => 0
-  get '*path' => 'layouts#index'
+  get '/!admin/*path.html' => 'layouts#index', layout: :null
+  get '/!admin/*path' => 'layouts#index'
+  get '/*path' => 'layouts#index', layout: :public
 
   # # settings
   resources :settings, except: :show

@@ -23,6 +23,7 @@
 //= require bootbox
 //= require ngBootbox
 //= require ng-page-title
+//= require angular-sanitize
 //= require ./angular/semantic_cms_app
 //= require_tree .
 //= require_tree ../templates
