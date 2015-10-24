@@ -67,6 +67,24 @@ class Page < ActiveRecord::Base
     @title
   end
 
+  def create_rdf(options)
+    @graph ||= RDF::Repository.load("#{Rails.root}/db/main.owl")
+    page = RDF::URI.new "http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo##{options[:name]}"
+    base = RDF::URI.new 'http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Page'
+    owl = RDF::URI.new 'http://www.w3.org/2002/07/owl#NamedIndividual'
+    html = RDF::URI.new 'http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#html'
+    path = RDF::URI.new 'http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#page_path'
+    title = RDF::URI.new 'http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#page_title'
+    @graph << [page, RDF.type, base]
+    @graph << [page, RDF.type, owl]
+    @graph << [page, html, options[:html]]
+    @graph << [page, path, options[:path]]
+    @graph << [page, title, options[:title]]
+    File.open("#{Rails.root}/db/main.owl", 'w') { |f| f << @graph.dump(:turtle) }
+
+    Page.create! uri: "http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo##{options[:name]}"
+  end
+
   private
 
   def load_instance

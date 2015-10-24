@@ -93,6 +93,12 @@
 <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#html>
     a <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 
+<http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#hw>
+    <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#html> "<pre>dif test_case<br>  p 'test_case'<br>end<br></pre>" ;
+    <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#page_path> "/h/w" ;
+    <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#page_title> "hw" ;
+    a <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Page>, <http://www.w3.org/2002/07/owl#NamedIndividual> .
+
 <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#impact_story>
     a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
     <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#social_network> .
@@ -185,6 +191,12 @@
 <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#start_date>
     a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
     <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#date> .
+
+<http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#test_page>
+    <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#html> "<ol><li>point 1</li><li>point 2</li><li>point 3</li><li>point 4<br></li></ol>" ;
+    <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#page_path> "/test_page" ;
+    <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#page_title> "Test Page" ;
+    a <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Page>, <http://www.w3.org/2002/07/owl#NamedIndividual> .
 
 <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#title>
     a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;

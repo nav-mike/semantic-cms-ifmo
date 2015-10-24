@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  # Mongo
+  mount MongodbLogger::Server.new, at: '/mongodb', as: :mongodb
+  mount MongodbLogger::Assets.instance, at: '/mongodb/assets', as: :mongodb_assets
+
   # users
   devise_for :users, path: ''
   resources :users, except: :show
@@ -35,9 +40,6 @@ Rails.application.routes.draw do
   # get 'admin' => 'admin#index'
   #
   # root 'pages#show'
-  #
-  # mount MongodbLogger::Server.new, at: '/mongodb', as: :mongodb
-  # mount MongodbLogger::Assets.instance, at: '/mongodb/assets', as: :mongodb_assets
   #
   # # debug cube
   # get '/admin/cube/project' => 'admin#project'
