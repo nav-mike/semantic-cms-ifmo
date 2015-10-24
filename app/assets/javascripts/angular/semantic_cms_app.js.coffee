@@ -24,6 +24,7 @@ angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.route
             }
             data: {
               pageTitle: 'Pages'
+              pageType: 'admin'
             }
         })
         .state('pages_new', {
@@ -39,6 +40,7 @@ angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.route
           }
           data: {
             pageTitle: 'New Page'
+            pageType: 'admin'
           }
         })
         .state('pages_edit', {
@@ -54,6 +56,7 @@ angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.route
           }
           data: {
             pageTitle: 'Edit Page'
+            pageType: 'admin'
           }
         })
         .state('pages_show', {
@@ -66,6 +69,9 @@ angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.route
             'content@pages_show': {
               templateUrl: 'pages/show.html'
             }
+          }
+          data: {
+            pageType: 'public'
           }
         })
       $urlRouterProvider.otherwise('/')
