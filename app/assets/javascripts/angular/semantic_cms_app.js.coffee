@@ -13,8 +13,15 @@ angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.route
       $stateProvider
         .state('pages_index', {
             url: '/!admin/pages'
-            templateUrl: 'pages/index.html'
-            controller: 'PagesIndex'
+            views: {
+              'layout': {
+                templateUrl: 'layouts/admin/layout.html'
+                controller: 'PagesIndex'
+              }
+              'content@pages_index': {
+                templateUrl: 'pages/index.html'
+              }
+            }
             data: {
               pageTitle: 'Pages'
             }
@@ -38,7 +45,7 @@ angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.route
         .state('pages_show', {
           url: '/pages/:id'
           views: {
-            '@': {
+            'layout': {
               templateUrl: 'layouts/public/layout.html'
               controller: 'PagesShow'
             }
