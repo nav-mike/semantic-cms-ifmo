@@ -33,7 +33,7 @@ class PagesController < ApplicationController
 
   def destroy
     @page.delete_full
-    redirect_to pages_url, notice: 'Page was successfully destroyed.'
+    render json: {message: 'Page was successfully destroyed.'}, status: :ok
   end
 
   private

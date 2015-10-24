@@ -5,6 +5,6 @@ angular.module('semanticCMSApp')
       $scope.pages = Page.query()
 
       $scope.deletePage = (page) ->
-        console.dir page
+        page.$delete({id: page.id})
         return
   ]
