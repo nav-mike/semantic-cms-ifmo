@@ -23,7 +23,7 @@ form.form-horizontal
   .form-group
     label.control-label.col-sm-2 for='page_html' Content
     .col-sm-10
-      div ckeditor='options' ng-model='page.html'
+      div#ng_ckeditor ckeditor='options' ready='onReady()' ng-model='page.html' data-toggle='popover' data-placement='left' data-content='You could use ERB-templates for insert some global variables.'
 
   .form-group
     .col-sm-offset-3.col-sm-9

@@ -50,6 +50,7 @@ class Page < ActiveRecord::Base
   end
 
   def html
+    projects = Project.all
     return '' if id.blank?
     load_instance if @html.blank?
     @html = @result[:html].value
