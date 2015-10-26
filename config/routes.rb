@@ -6,12 +6,13 @@ Rails.application.routes.draw do
 
   # users
   devise_for :users, path: ''
-  resources :users, except: :show
+  # resources :users, except: :show
 
   root 'layouts#index'
 
   scope 'admin/api', defaults: {format: :json} do
     resources :pages
+    resources :users
   end
 
   get '*path.html' => 'layouts#index', layout: :null
