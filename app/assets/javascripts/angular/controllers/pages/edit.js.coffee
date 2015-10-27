@@ -3,7 +3,14 @@ angular.module('semanticCMSApp')
     ['$scope', '$location', '$state', 'Page',
     ($scope, $location, $state, Page) ->
       id = $location.path().replace('/!admin/pages/edit/', '')
-      $scope.page = Page.get({id: id})
+      $scope.page = Page.get({id: id}, ->
+        console.dir $scope.page
+        $scope.page.ckeditor = $scope.page.html
+        $scope.page.erb = $scope.page.html
+        $scope.page.mode = 'text'
+      )
+
+
 
       $scope.optoins = {
         language: 'en'
@@ -18,14 +25,9 @@ angular.module('semanticCMSApp')
         $event.preventDefault()
         return
 
-      $scope.onReady = ->
-        $('#cke_ng_ckeditor').popover({
-          content: 'You could use <a target=\'_blank\' href=\'http://apidock.com/ruby/ERB\'>ERB-templates</a> for insert next global variables: <code>@projects</code>'
-          placement: 'left'
-          title: 'Help'
-          html: 'true'
-        })
-        $('#cke_ng_ckeditor').popover('show')
+      $scope.changeContentType = ($event) ->
+        $scope.mode = if $scope.page.mode is 'erb' then 'text' else 'erb'
+        $event.preventDefault()
         return
 
       return

@@ -50,16 +50,18 @@ class Page < ActiveRecord::Base
   end
 
   def html
+    load_instance if @html.blank?
+    @html = @result[:html].value
+    @html
+  end
+
+  def rendered_html
     projects = Project.all
     return '' if id.blank?
     load_instance if @html.blank?
-    temp = "<ul>
-              <% for item in projects %>
-	             <li><%= item.uri %></li>
-              <% end %>
-            </ul>"
+    temp = @result[:html].value
     pb = PageErb.new({projects: projects})
-    @html = pb.render(temp)
+    pb.render(temp)
   end
 
   def title
@@ -101,7 +103,7 @@ class Page < ActiveRecord::Base
     title = RDF::URI.new 'http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#page_title'
     @graph << [page, RDF.type, base]
     @graph << [page, RDF.type, owl]
-    @graph << [page, html, options[:html]]
+    @graph << [page, html, options[:html] || '-']
     @graph << [page, path, options[:path]]
     @graph << [page, title, options[:title]]
     File.open("#{Rails.root}/db/main.owl", 'w') { |f| f << @graph.dump(:turtle) }

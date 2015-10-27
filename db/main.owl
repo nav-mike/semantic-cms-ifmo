@@ -165,6 +165,13 @@
 <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#logo>
     a <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 
+<http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#my_f>
+    <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#html> """<p><s><u><em><strong>wqqwewqeqw</strong></em></u></s></p>
+""" ;
+    <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#page_path> "/myf" ;
+    <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#page_title> "My F Page" ;
+    a <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#Page>, <http://www.w3.org/2002/07/owl#NamedIndividual> .
+
 <http://www.semanticweb.org/mikhail/ontologies/2015/8/semantic-cms-ifmo#name>
     a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
     <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .

@@ -1,6 +1,6 @@
 angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.router',
                                   'ngResource', 'angular-loading-bar', 'ngBootbox',
-                                  'ngPageTitle', 'ngSanitize', 'ckeditor'])
+                                  'ngPageTitle', 'ngSanitize', 'ckeditor', 'ui.bootstrap.buttons'])
   .config(['$httpProvider', (provider) ->
     provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
   ])

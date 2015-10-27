@@ -3,6 +3,7 @@ angular.module('semanticCMSApp')
     ['$scope', '$state', 'Page',
       ($scope, $state, Page) ->
         $scope.page = {}
+        $scope.page.mode = 'text'
 
         $scope.optoins = {
           language: 'en'
@@ -18,13 +19,16 @@ angular.module('semanticCMSApp')
           $event.preventDefault()
           return
 
-        $scope.onReady = ->
-          $('#cke_ng_ckeditor').popover({
-            content: 'You could use <a target=\'_blank\' href=\'http://apidock.com/ruby/ERB\'>ERB-templates</a> for insert next global variables: <code>@projects</code>'
-            placement: 'left'
-            title: 'Help'
-            html: 'true'
-          })
-          $('#cke_ng_ckeditor').popover('show')
+        $scope.changeContentType = ($event) ->
+          $scope.mode = if $scope.mode is 'erb' then 'text' else 'erb'
+          $scope.mode_name = if $scope.mode is 'erb' then 'use CKEditor' else 'use ERB-template'
+          $event.preventDefault()
           return
+
+        $scope.dynamicPopover = {
+          content: 'Hello, World!',
+          templateUrl: 'popover.html',
+          title: 'Title'
+        }
+        return
     ]

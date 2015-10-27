@@ -28,7 +28,9 @@ class PagesController < ApplicationController
 
   def create
     @page = Page.new()
-    @page.create_rdf pages_params
+    ps = pages_params
+    ps[:html] = ps[:mode] == 'erb' ? ps[:erb] : ps[:ckeditor]
+    @page.create_rdf ps
     render json: true, status: :ok
   rescue => e
     logger.error e.message
@@ -37,7 +39,9 @@ class PagesController < ApplicationController
   end
 
   def update
-    @page.update_rdf pages_params
+    ps = pages_params
+    ps[:html] = ps[:mode] == 'erb' ? ps[:erb] : ps[:ckeditor]
+    @page.update_rdf ps
     render json: true, status: :ok
   rescue => e
     logger.error e.message
@@ -57,6 +61,6 @@ class PagesController < ApplicationController
   end
 
   def pages_params
-    params.permit(:name, :path, :title, :html)
+    params.permit(:name, :path, :title, :html, :mode, :ckeditor, :erb)
   end
 end

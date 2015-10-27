@@ -26,6 +26,8 @@
 //= require angular-sanitize
 //= require ckeditor/init
 //= require angular-ckeditor
+//= require ui-bootstrap
+//= require ui-bootstrap-tpls
 //= require ./angular/semantic_cms_app
 //= require_tree .
 //= require_tree ../templates

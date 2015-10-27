@@ -23,7 +23,19 @@ form.form-horizontal
   .form-group
     label.control-label.col-sm-2 for='page_html' Content
     .col-sm-10
-      div#ng_ckeditor ckeditor='options' ready='onReady()' ng-model='page.html' data-toggle='popover' data-placement='left' data-content='You could use ERB-templates for insert some global variables.'
+      p
+        .btn-group
+          label.btn.btn-default ng-model="page.mode" uib-btn-radio="'text'"  Text
+          label.btn.btn-default ng-model="page.mode" uib-btn-radio="'erb'"  Erb-template
+      div#ng_ckeditor ng-if='page.mode == "text"' ckeditor='options' ng-model='page.ckeditor'
+      .row ng-if='page.mode == "erb"'
+        p.help-block
+          | You could use
+          a href="http://apidock.com/ruby/ERB" target="_blank"  ERB-templates
+          |  for insert next global variables:
+          code  @projects
+        textarea.form-control#erb_html rows='10' ng-model='page.erb'
+
 
   .form-group
     .col-sm-offset-3.col-sm-9
