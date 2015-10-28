@@ -8,7 +8,7 @@ angular.module('semanticCMSApp')
         $scope.page = Page.get({id: id})
       else
         if type is 'path'
-          path = $location.path().replace('/pages/', '')
+          path = $location.path()
           $scope.page = Page.get({id: path}, (page)->
             console.dir page
           )
