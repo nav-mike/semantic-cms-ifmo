@@ -17,7 +17,7 @@
               a href='#' My profile
             li
               a href='#' method='delete'
-                i.glyphicon.glyphicon-lock
+                i.fa.fa-lock.fa-fw
                 |  Logout
 /! /Header
 
@@ -26,35 +26,35 @@
 
   /! upper section
   .row
-    .col-sm-3
+    .col-sm-2
       /! left
       / = render 'layouts/admins/toolbox'
       h3
-        i.glyphicon.glyphicon-briefcase
+        i.fa.fa-briefcase.fa-fw
         |  Toolbox
       hr
 
       ul.nav.nav-stacked
         li
           a href='/!admin/pages'
-            i.glyphicon.glyphicon-file
+            i.fa.fa-file-o.fa-fw
             |  Pages
         li
           a href='#users_path'
-            i.glyphicon.glyphicon-user
+            i.fa.fa-users.fa-fw
             |  Users
         li
           a href='#settings_path'
-            i.glyphicon.glyphicon-cog
+            i.fa.fa-cog.fa-fw
             |  Settings
         li
           a href='/admin/cube/project'
-            i.glyphicon.glyphicon-th
+            i.fa.fa-th.fa-fw
             |  Data cube
 
       hr
-    /! /span-3
-    .col-sm-9 ui-view="content"
+    /! /span-2
+    .col-sm-10 ui-view="content"
       / == yield
   / /! /row
 /! container
