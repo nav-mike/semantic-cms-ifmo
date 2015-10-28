@@ -36,3 +36,9 @@ a.title, a.title:hover {
     margin-right: 8px;
   }
 }
+
+.notice-admin {
+  position: absolute;
+  right: 210px;
+  z-index: 999;
+}
