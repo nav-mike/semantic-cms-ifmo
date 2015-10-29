@@ -11,6 +11,22 @@ angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.route
         requireBase: false
       })
       $stateProvider
+        .state('users_index', {
+          url: '/!admin/users'
+          views: {
+            'layout': {
+              templateUrl: 'layouts/admin/layout.html'
+              controller: 'UsersIndex'
+            }
+            'content@users_index': {
+              templateUrl: 'users/index.html'
+            }
+          }
+          data: {
+            pageTitle: 'Users'
+            pageType: 'admin'
+          }
+        })
         .state('pages_index', {
             url: '/!admin/pages'
             views: {
