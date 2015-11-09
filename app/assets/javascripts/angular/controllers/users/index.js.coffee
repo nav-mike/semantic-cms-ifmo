@@ -1,6 +1,7 @@
 angular.module('semanticCMSApp')
   .controller 'UsersIndex',
-    ['$scope',
-    ($scope) ->
+    ['$scope', 'User',
+    ($scope, User) ->
+      $scope.users = User.query()
       return
   ]

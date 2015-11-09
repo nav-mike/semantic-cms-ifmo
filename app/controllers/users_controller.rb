@@ -6,7 +6,7 @@ class UsersController < AuthenticateController
   before_action :set_user, only: %i(edit update destroy)
 
   def index
-    @users_grid = initialize_grid(User)
+    @users = User.all
   end
 
   def new
