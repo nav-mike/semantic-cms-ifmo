@@ -1,0 +1,28 @@
+.page-header
+  a.btn.btn-default href='/!admin/users'
+    i.fa.fa-list-alt.fa-fw
+    |  Users
+
+  h1.text-center Editing user
+
+form.form-horizontal
+  .form-group
+    label.control-label.col-sm-2 for='user_email' Email
+    .col-sm-10
+      input.form-control#user_email type='email' name='user[email]' placeholder='e.g. admin@admin.com' ng-model='user.email'
+
+  .form-group
+    label.control-label.col-sm-2 for='user_password' Password
+    .col-sm-10
+      input.form-control#user_password type='password' name='user[password]' placeholder='Leave empty if you do not change password' ng-model='user.password' title='Leave empty if you do not to change password'
+      p.help-block
+        | Leave empty if you do not to change password
+
+  .form-group
+    label.control-label.col-sm-2 for='user_password_confirmation' Password confirmation
+    .col-sm-10
+      input.form-control#user_password_confirmation type='password' name='user[password_confirmation]' ng-model='user.password_confirmation'
+
+  .form-group
+    .col-sm-offset-3.col-sm-9
+      button.btn.btn-primary ng-click='submit($event)' Update User
