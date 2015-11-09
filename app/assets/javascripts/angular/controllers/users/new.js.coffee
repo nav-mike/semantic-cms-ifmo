@@ -5,7 +5,7 @@ angular.module('semanticCMSApp')
         $scope.user = {}
 
         $scope.submit = ($event) ->
-          User.save($scope.user, ->
+          User.save({ user: $scope.user }, ->
             $state.go('users_index')
           )
     ]

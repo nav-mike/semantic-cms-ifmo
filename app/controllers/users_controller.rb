@@ -15,11 +15,12 @@ class UsersController < AuthenticateController
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      redirect_to users_url, notice: 'User was successfully created!'
-    else
-      render :new
-    end
+    @user.save!
+    render json: true, status: :ok
+  rescue => e
+    logger.error e.message
+    logger.error e.backtrace.join("\n")
+    render json: {message: e.message}, status: :internal_server_error
   end
 
   def edit

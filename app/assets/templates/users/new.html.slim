@@ -9,7 +9,12 @@ form.form-horizontal
   .form-group
     label.control-label.col-sm-2 for='user_email' Email
     .col-sm-10
-      input.form-control#user_email type='email' name='user[email]' placeholder='e.g. admin@admin.com' ng-model='user.name'
+      input.form-control#user_email type='email' name='user[email]' placeholder='e.g. admin@admin.com' ng-model='user.email'
+
+  .form-group
+    label.control-label.col-sm-2 for='user_password' Password
+    .col-sm-10
+      input.form-control#user_password type='password' name='user[password]' placeholder='e.g. 12345678' ng-model='user.password'
 
   .form-group
     .col-sm-offset-3.col-sm-9
