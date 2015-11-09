@@ -1,0 +1,16 @@
+.page-header
+  a.btn.btn-default href='/!admin/users'
+    i.fa.fa-list-alt.fa-fw
+    | Users
+
+  h1.text-center Add new user
+
+form.form-horizontal
+  .form-group
+    label.control-label.col-sm-2 for='user_email' Email
+    .col-sm-10
+      input.form-control#user_email type='email' name='user[email]' placeholder='e.g. admin@admin.com' ng-model='user.name'
+
+  .form-group
+    .col-sm-offset-3.col-sm-9
+      button.btn.btn-primary ng-click='submit($event)' Create User
