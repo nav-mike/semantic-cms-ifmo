@@ -1,9 +1,0 @@
-= simple_form_for @user do |f|
-  = f.input :email
-  = f.input :password,
-            hint: ('Leave empty if you do not need to change password' unless @user.new_record?),
-            input_html: {data: {toggle: 'password'}},
-            title: ('Leave empty if you do not need to change password' unless @user.new_record?)
-  .form-group
-    .col-sm-offset-3.col-sm-9
-      = f.button :submit
