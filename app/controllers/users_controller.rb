@@ -41,7 +41,11 @@ class UsersController < AuthenticateController
 
   def destroy
     @user.destroy
-    redirect_to users_url, notice: 'User was successfully destroyed.'
+    render json: {message: 'User was successfully destroyed.'}, status: :ok
+  rescue => e
+    logger.error e.message
+    logger.error e.backtrace.join("\n")
+    render json: {message: e.message}, status: :internal_server_error
   end
 
   private
