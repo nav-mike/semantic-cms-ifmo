@@ -26,7 +26,6 @@ class UsersController < AuthenticateController
     if @user.update(user_params)
       render json: true, status: :ok
     else
-      byebug
       logger.error @user.errors.messages.to_s
       render json: {message: @user.errors.messages}, status: :internal_server_error
     end
