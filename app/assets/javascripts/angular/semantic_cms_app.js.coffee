@@ -11,6 +11,22 @@ angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.route
         requireBase: false
       })
       $stateProvider
+        .state('variables_index', {
+          url: '/!admin/variables'
+          views: {
+            'layout': {
+              templateUrl: 'layouts/admin/layout.html'
+              controller: 'VariablesIndex'
+            }
+            'content@variables_index': {
+              templateUrl: 'variables/index.html'
+            }
+          }
+          data: {
+            pageTitle: 'Variables'
+            pageType: 'admin'
+          }
+        })
         .state('users_index', {
           url: '/!admin/users'
           views: {
@@ -125,6 +141,3 @@ angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.route
       $urlRouterProvider.otherwise('/!admin/pages')
       return
   ])
-
-# $(document).on 'ready page:load', (argumanets) ->
-  # angular.bootstrap document.body, ['semanticCMSApp']

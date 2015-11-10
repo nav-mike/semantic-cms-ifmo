@@ -13,12 +13,13 @@ Rails.application.routes.draw do
   scope 'admin/api', defaults: {format: :json} do
     resources :pages
     resources :users
+    resources :variables
   end
 
   get '*path.html' => 'layouts#index', layout: :null
   get '*path' => 'layouts#index'
 
-  # # settings
+  # settings
   resources :settings, except: :show
   #
   # # pages
