@@ -1,9 +1,7 @@
 # Variables controller class
 # @author M. Navrotskiy m.navrotskiy@gmail.com
 class VariablesController < AuthenticateController
-  layout 'admin'
-
-  before_action :set_variable, only: %i(show update destroy)
+    before_action :set_variable, only: %i(show update destroy)
 
   def index
     @variables = Variable.all
@@ -17,6 +15,9 @@ class VariablesController < AuthenticateController
     logger.error e.message
     logger.error e.backtrace.join("\n")
     render json: {message: e.message}, status: :internal_server_error
+  end
+
+  def show
   end
 
   def destroy
