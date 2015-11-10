@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151024153836) do
+ActiveRecord::Schema.define(version: 20151110174851) do
 
   create_table "pages", force: :cascade do |t|
     t.string   "uri",        null: false
@@ -73,5 +73,12 @@ ActiveRecord::Schema.define(version: 20151024153836) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
+
+  create_table "variables", force: :cascade do |t|
+    t.string   "name"
+    t.text     "sparql"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
