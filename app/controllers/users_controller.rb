@@ -3,14 +3,10 @@
 class UsersController < AuthenticateController
   layout 'admin'
 
-  before_action :set_user, only: %i(show edit update destroy)
+  before_action :set_user, only: %i(show update destroy)
 
   def index
     @users = User.all
-  end
-
-  def new
-    @user = User.new
   end
 
   def create
@@ -24,9 +20,6 @@ class UsersController < AuthenticateController
   end
 
   def show
-  end
-
-  def edit
   end
 
   def update
@@ -55,7 +48,6 @@ class UsersController < AuthenticateController
   end
 
   def user_params
-    # byebug
     if params[:user][:password].blank?
       params[:user].delete(:password)
       params[:user].delete(:password_confirmation)

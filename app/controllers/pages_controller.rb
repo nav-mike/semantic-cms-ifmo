@@ -19,13 +19,6 @@ class PagesController < ApplicationController
     end
   end
 
-  def new
-    @page = Page.new
-  end
-
-  def edit
-  end
-
   def create
     @page = Page.new()
     ps = pages_params
