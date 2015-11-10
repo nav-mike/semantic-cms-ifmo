@@ -15,7 +15,7 @@ table.table-striped.table-bordered.table
       th [edit]
       th [delete]
     tr ng-repeat='variable in variables'
-      td() {{$index}}
+      td() {{$index + 1}}
       td() {{variable.name}}
       td() {{variable.sparql}}
       td
@@ -26,3 +26,4 @@ table.table-striped.table-bordered.table
           i.fa.fa-eye.fa-fw
       td
         button.btn.btn-danger.btn-xs(ng-bootbox-confirm='Are you sure?' ng-bootbox-confirm-action='deleteVariable(variable)')
+          i.fa.fa-times.fa-fw
