@@ -46,7 +46,7 @@ class PagesController < ApplicationController
   rescue => e
     logger.error e.message
     logger.error e.backtrace.join("\n")
-    render json: {message: e.message}, status: :interval_server_error
+    render json: {message: e.message}, status: :internal_server_error
   end
 
   def destroy
