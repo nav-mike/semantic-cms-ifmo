@@ -27,6 +27,22 @@ angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.route
             pageType: 'admin'
           }
         })
+        .state('variables_new', {
+          url: '/!admin/variables/new'
+          views: {
+            'layout': {
+              templateUrl: 'layouts/admin/layout.html'
+              controller: 'VariablesNew'
+            }
+            'content@variables_new': {
+              templateUrl: 'variables/new.html'
+            }
+          }
+          data: {
+            pageTitle: 'New Variable'
+            pageType: 'admin'
+          }
+        })
         .state('users_index', {
           url: '/!admin/users'
           views: {
