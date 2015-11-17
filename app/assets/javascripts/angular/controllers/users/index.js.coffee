@@ -4,14 +4,10 @@ angular.module('semanticCMSApp')
     ($scope, User) ->
       $scope.users = User.query()
 
-      $scope.deleteUser = (user) ->
-        user_id = user.id
-        user.$delete({id: user_id})
-        for it, i in $scope.users
-          if it.id is user_id
-            index = i
-            break
-        $scope.users.splice(index, 1) if index = -1
+      $scope.deleteUser = (user_id, index) ->
+        User.delete({id: user_id}, ->
+          $scope.users.splice(index, 1)
+        )
         return
       return
   ]

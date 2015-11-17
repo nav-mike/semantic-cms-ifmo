@@ -30,5 +30,5 @@ table.table-striped.table-bordered.table
         a.btn.btn-info.btn-xs(ng-href='{{page.path}}' target='_blank' title='Show on public')
           i.fa.fa-eye.fa-fw
       td
-        button.btn.btn-danger.btn-xs(ng-bootbox-confirm='Are you sure?' ng-bootbox-confirm-action='deletePage(page)')
+        button.btn.btn-danger.btn-xs(ng-bootbox-confirm='Are you sure?' ng-bootbox-confirm-action='deletePage(page.id, $index)')
           i.fa.fa-times.fa-fw
