@@ -20,6 +20,15 @@ class VariablesController < AuthenticateController
   def show
   end
 
+  def update
+    if @variable.update(variable_params)
+      render json: true, status: :ok
+    else
+      logger.error @variable.errors.messages.to_s
+      render json: {message: @variable.errors.messages}, status: :internal_server_error
+    end
+  end
+
   def destroy
     if @variable.destroy
       render json: true, status: :ok

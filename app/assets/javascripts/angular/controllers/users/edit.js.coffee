@@ -8,8 +8,6 @@ angular.module('semanticCMSApp')
         )
 
         $scope.submit = ($event) ->
-          # user = $scope.user
-          # console.dir user
           User.update({ id: $scope.user.id }, {
               user: {
                 email: $scope.user.email,
@@ -19,9 +17,6 @@ angular.module('semanticCMSApp')
             }, ->
             $state.go('users_index')
           )
-          # $scope.user.$update({ id: $scope.user.id }, ->
-          #   console.log '123'
-          # )
           $event.preventDefault()
           return
     ]

@@ -1,0 +1,21 @@
+.page-header
+  a.btn.btn-default href='/!admin/variables'
+    i.fa.fa-list-alt.fa-fw
+    |  Variables
+
+  h1.text-center Editing variable
+
+form.form-horizontal
+  .form-group
+    label.control-label.col-sm-2 for='variable_name' Name
+    .col-sm-10
+      input.form-control#variable_name type='text' name='variable[name]' ng-model='variable.name'
+
+  .form-group
+    label.control-label.col-sm-2 for='variable_query' Query
+    .col-sm-10
+      textarea.form-control#variable_sparql rows='15' name='variable[sparql]' ng-model='variable.sparql'
+
+  .form-group
+    .col-sm-offset-3.col-sm-9
+      button.btn.btn-primary ng-click='submit($event)' Update Variable
