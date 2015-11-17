@@ -27,5 +27,5 @@ table.table-striped.table-bordered.table
           i.fa.fa-eye.fa-fw
       td
         span ng-show='variable.can_removed'
-          button.btn.btn-danger.btn-xs(ng-bootbox-confirm='Are you sure?' ng-bootbox-confirm-action='deleteVariable(variable)')
+          button.btn.btn-danger.btn-xs(ng-bootbox-confirm='Are you sure?' ng-bootbox-confirm-action='deleteVariable(variable.id, $index)')
             i.fa.fa-times.fa-fw
