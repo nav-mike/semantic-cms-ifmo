@@ -25,5 +25,6 @@ table.table-striped.table-bordered.table
         a.btn.btn-info.btn-xs(ng-href='/!admin/variables/{{variable.id}}' title='Show variable query result')
           i.fa.fa-eye.fa-fw
       td
-        button.btn.btn-danger.btn-xs(ng-bootbox-confirm='Are you sure?' ng-bootbox-confirm-action='deleteVariable(variable)')
-          i.fa.fa-times.fa-fw
+        span ng-show='variable.can_removed'
+          button.btn.btn-danger.btn-xs(ng-bootbox-confirm='Are you sure?' ng-bootbox-confirm-action='deleteVariable(variable)')
+            i.fa.fa-times.fa-fw
