@@ -77,8 +77,9 @@ ActiveRecord::Schema.define(version: 20151110174851) do
   create_table "variables", force: :cascade do |t|
     t.string   "name"
     t.text     "sparql"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "can_removed", default: true, null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
 end
