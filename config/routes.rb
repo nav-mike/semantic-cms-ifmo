@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :pages
     resources :users, except: :show
     resources :variables
+    get '/variables/:id/exec' => 'variables#exec', constraints: {id: /[0-9]+/}
   end
 
   get '*path.html' => 'layouts#index', layout: :null

@@ -1,7 +1,7 @@
 # Variables controller class
 # @author M. Navrotskiy m.navrotskiy@gmail.com
 class VariablesController < AuthenticateController
-    before_action :set_variable, only: %i(show update destroy)
+    before_action :set_variable, only: %i(show exec update destroy)
 
   def index
     @variables = Variable.all
@@ -18,6 +18,17 @@ class VariablesController < AuthenticateController
   end
 
   def show
+  end
+
+  def exec
+    graph = RDF::Repository.load("#{Rails.root}/db/main.owl")
+    sse = SPARQL.parse(@variable.sparql)
+    result = graph.query(sse).to_a.map { |e| e.to_hash }
+    render json: result, status: :ok
+  rescue => e
+    logger.error e.message
+    logger.error e.backtrace.join("\n")
+    render json: e.message, status: :ok
   end
 
   def update

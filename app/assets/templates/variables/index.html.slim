@@ -17,7 +17,8 @@ table.table-striped.table-bordered.table
     tr ng-repeat='variable in variables'
       td() {{$index + 1}}
       td() {{variable.name}}
-      td() {{variable.sparql}}
+      td
+        code() {{variable.sparql}}
       td
         a.btn.btn-warning.btn-xs(ng-href='/!admin/variables/edit/{{variable.id}}' title='Edit variable')
           i.fa.fa-pencil.fa-fw

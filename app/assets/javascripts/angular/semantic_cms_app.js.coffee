@@ -55,6 +55,18 @@ angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.route
             }
           }
         })
+        .state('variables_show', {
+          url: '/!admin/variables/:id'
+          views: {
+            'layout': {
+              templateUrl: 'layouts/admin/layout.html'
+              controller: 'VariablesShow'
+            }
+            'content@variables_show': {
+              templateUrl: 'variables/show.html'
+            }
+          }
+        })
         .state('users_index', {
           url: '/!admin/users'
           views: {
