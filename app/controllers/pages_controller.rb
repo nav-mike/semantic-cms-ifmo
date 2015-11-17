@@ -9,6 +9,10 @@ class PagesController < ApplicationController
 
   def index
     @pages = Page.all
+  rescue => e
+    logger.error e.message
+    logger.error e.backtrace.join("\n")
+    render json: {message: e.message}, status: :internal_server_error
   end
 
   def show
