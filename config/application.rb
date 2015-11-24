@@ -32,5 +32,6 @@ module Workspace
 
     config.assets.paths << Rails.root.join("lib","assets","bower_components","angular-loading-bar", "build")
     config.assets.paths << Rails.root.join("lib", "assets", "bower_components", "angular-bootstrap")
+    config.assets.paths << Rails.root.join("lib", "assets", "bower_components", "ng-notify", "dist")
   end
 end

@@ -28,6 +28,7 @@
 //= require angular-ckeditor
 //= require ui-bootstrap
 //= require ui-bootstrap-tpls
+//= require ng-notify
 //= require ./angular/semantic_cms_app
 //= require_tree .
 //= require_tree ../templates
