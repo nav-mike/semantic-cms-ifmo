@@ -2,7 +2,11 @@
 # @author M. Navrotskiy m.navrotskiy@gmail.com
 class LayoutsController < AdminController
   def index
-    render layout: layout_name
+    if request.path == '/'
+      redirect_to '/pages/index'
+    else
+      render layout: layout_name
+    end
   end
 
   def layout_name

@@ -179,6 +179,6 @@ angular.module('semanticCMSApp', ['ngRoute', 'templates', 'ngAnimate', 'ui.route
             pagePath: 'path'
           }
         })
-      $urlRouterProvider.otherwise('/!admin/pages')
+      $urlRouterProvider.otherwise('/pages/index')
       return
   ])

@@ -4,6 +4,7 @@ class AdminController < AuthenticateController
   layout 'admin', only: [:index]
 
   def index
+    redirect_to '/pages/index'
   end
 
   def project
